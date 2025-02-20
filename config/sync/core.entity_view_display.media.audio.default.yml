@@ -8,11 +8,14 @@ dependencies:
     - field.field.media.audio.ableplayer_poster_image
     - field.field.media.audio.ableplayer_sign_language
     - field.field.media.audio.field_ableplayer_media_caption
+    - field.field.media.audio.field_access_terms
     - field.field.media.audio.field_media_audio_file
+    - field.field.media.audio.field_media_file_fits
     - field.field.media.audio.field_media_use
     - media.type.audio
   module:
     - file_entity
+    - json_field
 id: media.audio.default
 targetEntityType: media
 bundle: audio
@@ -28,6 +31,14 @@ content:
       multiple_file_behavior: tags
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_media_file_fits:
+    type: json
+    label: above
+    settings:
+      attach_library: true
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   ableplayer_chapter: true

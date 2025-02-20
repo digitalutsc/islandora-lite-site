@@ -9,6 +9,8 @@ dependencies:
     - field.field.media.video.ableplayer_poster_image
     - field.field.media.video.ableplayer_sign_language
     - field.field.media.video.field_ableplayer_media_caption
+    - field.field.media.video.field_access_terms
+    - field.field.media.video.field_media_file_fits
     - field.field.media.video.field_media_use
     - field.field.media.video.field_media_video_file
     - media.type.video
@@ -62,6 +64,7 @@ hidden:
   ableplayer_sign_language: true
   created: true
   field_access_terms: true
+  field_media_file_fits: true
   name: true
   path: true
   status: true

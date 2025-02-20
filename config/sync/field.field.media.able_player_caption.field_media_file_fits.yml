@@ -1,0 +1,21 @@
+uuid: 1158cea4-4232-43b2-bed0-1e0207ef8a3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_fits
+    - media.type.able_player_caption
+  module:
+    - json_field
+id: media.able_player_caption.field_media_file_fits
+field_name: field_media_file_fits
+entity_type: media
+bundle: able_player_caption
+label: 'Media File Fits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: json_native

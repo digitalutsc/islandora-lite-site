@@ -1,0 +1,8 @@
+uuid: fdd4435b-733f-4f53-ac8d-8cf905f64483
+langcode: en
+status: true
+dependencies: {  }
+id: file_format_multiple
+label: field_media_file_fits
+field_name: 'File Format (Multiple)'
+json_path: 'identification.identity[0]."@attributes".format'

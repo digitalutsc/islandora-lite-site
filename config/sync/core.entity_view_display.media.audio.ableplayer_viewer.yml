@@ -9,7 +9,9 @@ dependencies:
     - field.field.media.audio.ableplayer_poster_image
     - field.field.media.audio.ableplayer_sign_language
     - field.field.media.audio.field_ableplayer_media_caption
+    - field.field.media.audio.field_access_terms
     - field.field.media.audio.field_media_audio_file
+    - field.field.media.audio.field_media_file_fits
     - field.field.media.audio.field_media_use
     - media.type.audio
   module:
@@ -44,6 +46,7 @@ hidden:
   created: true
   field_ableplayer_media_caption: true
   field_access_terms: true
+  field_media_file_fits: true
   field_media_use: true
   langcode: true
   name: true

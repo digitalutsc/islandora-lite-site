@@ -8,16 +8,27 @@ dependencies:
     - field.field.media.video.ableplayer_poster_image
     - field.field.media.video.ableplayer_sign_language
     - field.field.media.video.field_ableplayer_media_caption
+    - field.field.media.video.field_access_terms
+    - field.field.media.video.field_media_file_fits
     - field.field.media.video.field_media_use
     - field.field.media.video.field_media_video_file
     - media.type.video
   module:
     - file_entity
+    - json_field
 id: media.video.default
 targetEntityType: media
 bundle: video
 mode: default
 content:
+  field_media_file_fits:
+    type: json
+    label: above
+    settings:
+      attach_library: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_media_video_file:
     type: file_video
     label: visually_hidden

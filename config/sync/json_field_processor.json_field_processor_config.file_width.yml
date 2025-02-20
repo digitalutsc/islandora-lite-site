@@ -1,0 +1,8 @@
+uuid: f82ef2b2-ca38-4af8-b332-dfe9e3620bc7
+langcode: en
+status: true
+dependencies: {  }
+id: file_width
+label: field_media_file_fits
+field_name: 'File Width'
+json_path: metadata.image.imageWidth

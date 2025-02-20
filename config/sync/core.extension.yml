@@ -73,6 +73,7 @@ module:
   jquery_ui_autocomplete: 0
   jquery_ui_menu: 0
   json_field: 0
+  json_field_processor: 0
   jsonld: 0
   jwt: 0
   jwt_auth_consumer: 0

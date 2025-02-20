@@ -1,0 +1,8 @@
+uuid: 31ae911c-2af7-423a-9f27-8b147bc4b966
+langcode: en
+status: true
+dependencies: {  }
+id: file_pronom_puid_single
+label: field_media_file_fits
+field_name: 'File PRONOM PUID (Single)'
+json_path: identification.identity.externalIdentifier

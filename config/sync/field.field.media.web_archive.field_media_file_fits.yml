@@ -1,0 +1,21 @@
+uuid: 9f67737f-5410-4e6a-8921-e94c8e0051bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_fits
+    - media.type.web_archive
+  module:
+    - json_field
+id: media.web_archive.field_media_file_fits
+field_name: field_media_file_fits
+entity_type: media
+bundle: web_archive
+label: 'Media File Fits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: json_native

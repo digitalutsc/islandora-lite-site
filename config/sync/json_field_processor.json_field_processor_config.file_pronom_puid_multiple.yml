@@ -1,0 +1,8 @@
+uuid: 749ac0d5-6dd8-44a5-853e-7b2cba91b8f2
+langcode: en
+status: true
+dependencies: {  }
+id: file_pronom_puid_multiple
+label: field_media_file_fits
+field_name: 'File PRONOM PUID (Multiple)'
+json_path: 'identification.identity[0].externalIdentifier'

@@ -7,6 +7,7 @@ dependencies:
     - field.field.media.web_archive.field_access_terms
     - field.field.media.web_archive.field_base_url
     - field.field.media.web_archive.field_media_file
+    - field.field.media.web_archive.field_media_file_fits
     - field.field.media.web_archive.field_media_use
     - media.type.web_archive
   module:
@@ -44,6 +45,7 @@ content:
 hidden:
   created: true
   field_access_terms: true
+  field_media_file_fits: true
   field_media_use: true
   langcode: true
   name: true
