@@ -8,3 +8,4 @@ name: Exhibit
 vid: exhibit
 description: 'Used for site exhibits'
 weight: 0
+new_revision: false

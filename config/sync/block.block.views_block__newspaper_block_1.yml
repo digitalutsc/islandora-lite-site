@@ -47,11 +47,11 @@ visibility:
     values: ''
   term:
     id: term
+    negate: false
+    context_mapping: {  }
     tid:
       -
         target_id: '19'
-    negate: false
-    context_mapping: {  }
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false

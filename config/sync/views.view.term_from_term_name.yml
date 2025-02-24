@@ -76,6 +76,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -130,7 +131,6 @@ display:
             query_param: uri
             fallback: ''
             multiple: and
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -232,7 +232,6 @@ display:
             query_param: name
             fallback: ''
             multiple: and
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -277,7 +276,6 @@ display:
             query_param: vocab
             fallback: ''
             multiple: and
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

@@ -1,3 +1,4 @@
+uuid: 8e674327-81de-44d3-a725-b6fd7a66ed55
 langcode: en
 status: true
 dependencies:
@@ -9,12 +10,13 @@ dependencies:
 id: islandora_hocr_und_7_0_0
 label: 'Language Undefined hOCR Field'
 minimum_solr_version: 7.0.0
-custom_code: 'islandora_hocr'
+custom_code: islandora_hocr
 field_type_language_code: und
-domains: {}
+domains: {  }
 field_type:
   name: islandora_hocr_und
   class: solr.TextField
+  storeOffsetsWithPositions: true
   analyzers:
     -
       type: index
@@ -85,7 +87,6 @@ field_type:
           class: solr.LowerCaseFilterFactory
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
-  storeOffsetsWithPositions: true
 unstemmed_field_type: null
 spellcheck_field_type: null
 collated_field_type: null

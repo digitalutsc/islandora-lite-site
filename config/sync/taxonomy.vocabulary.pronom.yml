@@ -8,3 +8,4 @@ name: PRONOM
 vid: pronom
 description: 'Vocabulary for PRONOM PUID from FITS'
 weight: 0
+new_revision: false

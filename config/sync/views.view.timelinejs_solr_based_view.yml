@@ -600,7 +600,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: search_api_none
         options: {  }
       empty: {  }
       sorts:
@@ -637,7 +637,6 @@ display:
           default_argument_options:
             index: 1
             use_alias: false
-          default_argument_skip_url: false
           summary_options: {  }
           summary:
             sort_order: asc
@@ -1502,7 +1501,7 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: none
+        type: search_api_none
       defaults:
         cache: false
         fields: false

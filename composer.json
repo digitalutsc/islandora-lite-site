@@ -126,10 +126,8 @@
       "drupal/facets": "2.0.9",
       "drupal/field_group": "^3.4",
       "drupal/field_permissions": "^1.2",
-      "drupal/file_entity": "^2.0@RC",
       "drupal/filemime": "^1.11",
       "drupal/filter_perms": "^1.0@alpha",
-      "drupal/fits": "^1.1@alpha",
       "drupal/flysystem": "^2.1@RC",
       "drupal/fontawesome": "^2.26",
       "drupal/fullcalendar_solr": "^1.0@beta",
@@ -291,9 +289,6 @@
          },
          "islandora/openseadragon": {
             "openseadragon.authentication.patch": "https://raw.githubusercontent.com/digitalutsc/private_files_adapter/main/scripts/openseadragon.authentication.patch"
-         },
-         "drupal/file_entity": {
-            "override_file_access.patch": "https://raw.githubusercontent.com/digitalutsc/override_permission_file_entity/main/override_file_access.patch"
          },
          "drupal/better_social_sharing_buttons":{
            "custom_link.patch": "https://www.drupal.org/files/issues/2023-11-09/custom_link_4-0-7-2.patch"

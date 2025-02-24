@@ -14,7 +14,7 @@ dependencies:
     - field.field.media.video.field_media_video_file
     - media.type.video
   module:
-    - file_entity
+    - file
     - json_field
 id: media.video.default
 targetEntityType: media
@@ -30,19 +30,12 @@ content:
     weight: 6
     region: content
   field_media_video_file:
-    type: file_video
-    label: visually_hidden
+    type: file_default
+    label: above
     settings:
-      controls: false
-      autoplay: false
-      loop: false
-      muted: false
-      width: null
-      height: null
-      multiple_file_behavior: tags
-      playsinline: 0
+      use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 0
+    weight: 7
     region: content
 hidden:
   ableplayer_chapter: true

@@ -3,5 +3,3 @@ mirador_enabled_plugins:
   miradorImageToolsPlugin: miradorImageToolsPlugin
   textOverlayPlugin: textOverlayPlugin
 iiif_manifest_url: 'https://islandora.traefik.me/node/[node:nid]/manifest'
-
-

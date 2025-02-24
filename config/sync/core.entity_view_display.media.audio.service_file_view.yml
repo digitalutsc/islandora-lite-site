@@ -15,7 +15,7 @@ dependencies:
     - field.field.media.audio.field_media_use
     - media.type.audio
   module:
-    - file_entity
+    - file
 _core:
   default_config_hash: tbOG3mzxYFe_tZB0pKc0yIZSccK2jhJ525X3HBtUQcM
 id: media.audio.service_file_view
@@ -24,15 +24,12 @@ bundle: audio
 mode: service_file_view
 content:
   field_media_audio_file:
-    type: file_audio
-    label: visually_hidden
+    type: file_default
+    label: above
     settings:
-      controls: true
-      autoplay: false
-      loop: false
-      multiple_file_behavior: tags
+      use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   ableplayer_chapter: true

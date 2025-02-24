@@ -14,7 +14,7 @@ dependencies:
     - field.field.media.audio.field_media_use
     - media.type.audio
   module:
-    - file_entity
+    - file
     - json_field
 id: media.audio.default
 targetEntityType: media
@@ -22,15 +22,12 @@ bundle: audio
 mode: default
 content:
   field_media_audio_file:
-    type: file_audio
-    label: visually_hidden
+    type: file_default
+    label: above
     settings:
-      controls: true
-      autoplay: false
-      loop: false
-      multiple_file_behavior: tags
+      use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 0
+    weight: 7
     region: content
   field_media_file_fits:
     type: json
