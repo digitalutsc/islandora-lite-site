@@ -1,0 +1,21 @@
+uuid: 596b235b-aa3b-46cd-b1ff-1bd008051505
+langcode: en
+status: true
+dependencies:
+  module:
+    - triplestore_indexer
+_core:
+  default_config_hash: a_372ZaPR4rjN7tEVsA2Yy7m28u08xvnL_obWymW3AQ
+name: index_content_blazegraph
+label: Content
+group: Indexing
+description: 'Index all content to Blazegraph.'
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  triplestore_index_reaction:
+    id: triplestore_index_reaction
+    actions: index_node_to_triplestore_advancedqueue
+    saved: false
+weight: 0

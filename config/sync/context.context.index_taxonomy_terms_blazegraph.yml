@@ -1,0 +1,21 @@
+uuid: abcf3c43-70f4-4e11-accf-b7524ca999f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - triplestore_indexer
+_core:
+  default_config_hash: ZhmcXQiTZYswA5xqZ92QK4LxGR2FMb5PSAygSuDwmKY
+name: index_taxonomy_terms_blazegraph
+label: 'Taxonomy Terms'
+group: Indexing
+description: 'Index taxonomy terms to Blazegraph.'
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  triplestore_index_reaction:
+    id: triplestore_index_reaction
+    actions: index_taxonomy_term_to_triplestore_advancedqueue
+    saved: false
+weight: 0

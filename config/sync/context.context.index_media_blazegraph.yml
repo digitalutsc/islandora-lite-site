@@ -1,0 +1,21 @@
+uuid: 08b220e7-c99b-4b24-a357-61a008bb7167
+langcode: en
+status: true
+dependencies:
+  module:
+    - triplestore_indexer
+_core:
+  default_config_hash: X7e05hYksRV_kk6xDRks1mJ6BYlxR6M6_4WnO2RlVzc
+name: index_media_blazegraph
+label: Media
+group: Indexing
+description: 'Index all media bundles Blazegraph'
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  triplestore_index_reaction:
+    id: triplestore_index_reaction
+    actions: index_media_to_triplestore_advancedqueue
+    saved: false
+weight: 0

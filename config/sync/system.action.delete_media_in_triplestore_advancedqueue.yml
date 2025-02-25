@@ -1,0 +1,13 @@
+uuid: 76373650-7fd4-40f0-84e1-fe96f1cad177
+langcode: en
+status: true
+dependencies:
+  module:
+    - triplestore_indexer
+_core:
+  default_config_hash: gk9uvr6XHHgjng9Fqh5XjIUKB6LmynklfsK888fCryE
+id: delete_media_in_triplestore_advancedqueue
+label: 'Delete media in Triplestore (via Advanced Queue)'
+type: media
+plugin: delete_media_in_triplestore_advancedqueue
+configuration: {  }

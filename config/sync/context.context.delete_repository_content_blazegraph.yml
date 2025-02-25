@@ -1,0 +1,21 @@
+uuid: 0d79c11f-e43b-4ecc-8e14-ab92c91342db
+langcode: en
+status: true
+dependencies:
+  module:
+    - triplestore_indexer
+_core:
+  default_config_hash: _BdLLtj438MR3cdXoC3rqZ-w3hbEVoXZ7BYVkuekwAI
+name: delete_repository_content_blazegraph
+label: 'Delete Repository Content'
+group: Blazegraph
+description: 'Deleting indexed all Islandora nodes from Blazegraph when content is deleted.'
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  triplestore_delete_reaction:
+    id: triplestore_delete_reaction
+    actions: delete_node_in_triplestore_advancedqueue
+    saved: false
+weight: -5

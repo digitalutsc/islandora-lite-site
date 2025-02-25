@@ -1,0 +1,21 @@
+uuid: 3c0a98e9-00a5-4880-81b7-8566f42ede3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - triplestore_indexer
+_core:
+  default_config_hash: xYDXWbGCyITVT84U5Yqyoh8PmatVhTZbpTuHhZxSYLg
+name: delete_taxonomy_terms_from_blazegraph
+label: 'Delete Taxonomy terms'
+group: Blazegraph
+description: 'Deleting indexed Islandora nodes from Blazegraph when content is deleted.'
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  triplestore_delete_reaction:
+    id: triplestore_delete_reaction
+    actions: delete_taxonomy_term_in_triplestore_advancedqueue
+    saved: false
+weight: -4

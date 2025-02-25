@@ -30,6 +30,7 @@ module:
   datetime: 0
   dblog: 0
   devel: 0
+  dgi_fixity: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
@@ -136,7 +137,6 @@ module:
   views_nested_details: 0
   views_timelinejs: 0
   views_ui: 0
-  dgi_fixity: 0
   content_translation: 10
   views: 10
   minimal: 1000

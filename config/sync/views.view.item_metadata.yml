@@ -1163,11 +1163,6 @@ display:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          override: 0
-          sticky: 0
-          caption: ''
-          summary: ''
-          description: ''
           columns:
             title: title
             field_identifier: field_identifier
@@ -1182,83 +1177,88 @@ display:
             field_subject: field_subject
             field_geographic_subject: field_geographic_subject
             field_rights: field_rights
+          default: '-1'
           info:
             title:
-              sortable: 0
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: 0
+              empty_column: false
               responsive: ''
             field_identifier:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_member_of:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_description:
-              sortable: 0
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_linked_agent:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_edtf_date_created:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_language:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_genre:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_resource_type:
-              sortable: 0
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_extent:
               align: ''
               separator: ''
-              empty_column: 0
+              empty_column: false
               responsive: ''
             field_subject:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_geographic_subject:
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
             field_rights:
-              sortable: 0
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: 1
+              empty_column: true
               responsive: ''
-          default: '-1'
-          empty_table: 0
-          flipped_table_header_first_field: 0
+          override: false
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+          flipped_table_header_first_field: false
       row:
         type: fields
       query:
