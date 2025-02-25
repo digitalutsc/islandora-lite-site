@@ -41,6 +41,7 @@ module:
   field_permissions: 0
   field_ui: 0
   file: 0
+  filehash: 0
   filemime: 0
   filter: 0
   flexible_permissions: 0
@@ -135,6 +136,7 @@ module:
   views_nested_details: 0
   views_timelinejs: 0
   views_ui: 0
+  dgi_fixity: 0
   content_translation: 10
   views: 10
   minimal: 1000
