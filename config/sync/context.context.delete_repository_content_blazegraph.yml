@@ -6,8 +6,8 @@ dependencies:
     - triplestore_indexer
 _core:
   default_config_hash: _BdLLtj438MR3cdXoC3rqZ-w3hbEVoXZ7BYVkuekwAI
-name: delete_repository_content_blazegraph
 label: 'Delete Repository Content'
+name: delete_repository_content_blazegraph
 group: Blazegraph
 description: 'Deleting indexed all Islandora nodes from Blazegraph when content is deleted.'
 requireAllConditions: false

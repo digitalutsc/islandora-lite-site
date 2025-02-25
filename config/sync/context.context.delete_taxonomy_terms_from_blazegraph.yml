@@ -6,8 +6,8 @@ dependencies:
     - triplestore_indexer
 _core:
   default_config_hash: xYDXWbGCyITVT84U5Yqyoh8PmatVhTZbpTuHhZxSYLg
-name: delete_taxonomy_terms_from_blazegraph
 label: 'Delete Taxonomy terms'
+name: delete_taxonomy_terms_from_blazegraph
 group: Blazegraph
 description: 'Deleting indexed Islandora nodes from Blazegraph when content is deleted.'
 requireAllConditions: false

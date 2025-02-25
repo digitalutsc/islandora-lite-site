@@ -6,8 +6,8 @@ dependencies:
     - triplestore_indexer
 _core:
   default_config_hash: ZhmcXQiTZYswA5xqZ92QK4LxGR2FMb5PSAygSuDwmKY
-name: index_taxonomy_terms_blazegraph
 label: 'Taxonomy Terms'
+name: index_taxonomy_terms_blazegraph
 group: Indexing
 description: 'Index taxonomy terms to Blazegraph.'
 requireAllConditions: false

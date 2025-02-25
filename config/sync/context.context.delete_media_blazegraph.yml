@@ -6,8 +6,8 @@ dependencies:
     - triplestore_indexer
 _core:
   default_config_hash: InWHMU9kdlbXR88joBw4iEZdduPJ_fHkgn52msURb4w
-name: delete_media_blazegraph
 label: 'Delete Media'
+name: delete_media_blazegraph
 group: Blazegraph
 description: 'Delete indexed media in Blazegraph when media is deleted'
 requireAllConditions: false

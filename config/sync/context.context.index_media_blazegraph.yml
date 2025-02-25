@@ -6,8 +6,8 @@ dependencies:
     - triplestore_indexer
 _core:
   default_config_hash: X7e05hYksRV_kk6xDRks1mJ6BYlxR6M6_4WnO2RlVzc
-name: index_media_blazegraph
 label: Media
+name: index_media_blazegraph
 group: Indexing
 description: 'Index all media bundles Blazegraph'
 requireAllConditions: false

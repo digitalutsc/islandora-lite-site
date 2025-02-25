@@ -6,8 +6,8 @@ dependencies:
     - triplestore_indexer
 _core:
   default_config_hash: a_372ZaPR4rjN7tEVsA2Yy7m28u08xvnL_obWymW3AQ
-name: index_content_blazegraph
 label: Content
+name: index_content_blazegraph
 group: Indexing
 description: 'Index all content to Blazegraph.'
 requireAllConditions: false
