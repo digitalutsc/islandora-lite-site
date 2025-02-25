@@ -9,11 +9,13 @@ dependencies:
     - field.field.media.video.ableplayer_sign_language
     - field.field.media.video.field_ableplayer_media_caption
     - field.field.media.video.field_access_terms
+    - field.field.media.video.field_media_file_fits
     - field.field.media.video.field_media_use
     - field.field.media.video.field_media_video_file
     - media.type.video
   module:
     - file
+    - json_field
     - path
 id: media.video.default
 targetEntityType: media
@@ -44,6 +46,14 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_file_fits:
+    type: json_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_media_use:

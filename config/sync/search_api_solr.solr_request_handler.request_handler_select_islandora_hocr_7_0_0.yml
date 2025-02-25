@@ -1,3 +1,4 @@
+uuid: a7ca44f5-81cb-4bb7-8a17-df4f34edd12b
 langcode: en
 status: true
 dependencies:
@@ -6,9 +7,9 @@ dependencies:
   module:
     - islandora_hocr
 id: request_handler_select_islandora_hocr_7_0_0
-label: Select w/ OCR Highlighting Component
+label: 'Select w/ OCR Highlighting Component'
 minimum_solr_version: 7.0.0
-environments: { }
+environments: {  }
 recommended: true
 request_handler:
   name: /select_ocr

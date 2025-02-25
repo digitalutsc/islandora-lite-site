@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_access_terms
+    - field.field.media.image.field_media_file_fits
     - field.field.media.image.field_media_image
     - field.field.media.image.field_media_use
     - field.field.media.image.field_ocr
@@ -10,11 +12,20 @@ dependencies:
     - media.type.image
   module:
     - image
+    - json_field
 id: media.image.default
 targetEntityType: media
 bundle: image
 mode: default
 content:
+  field_media_file_fits:
+    type: json
+    label: above
+    settings:
+      attach_library: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_media_image:
     type: image
     label: visually_hidden

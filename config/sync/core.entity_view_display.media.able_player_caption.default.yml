@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.media.able_player_caption.ableplayer_caption
     - field.field.media.able_player_caption.field_access_terms
+    - field.field.media.able_player_caption.field_media_file_fits
     - image.style.thumbnail
     - media.type.able_player_caption
   module:
     - file
     - image
+    - json_field
     - user
 id: media.able_player_caption.default
 targetEntityType: media
@@ -31,6 +33,15 @@ content:
       date_format: medium
       custom_date_format: ''
       timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
     third_party_settings: {  }
     weight: 3
     region: content
@@ -41,6 +52,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_media_file_fits:
+    type: json
+    label: above
+    settings:
+      attach_library: true
+    third_party_settings: {  }
+    weight: 6
     region: content
   name:
     type: string

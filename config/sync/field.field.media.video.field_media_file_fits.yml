@@ -1,0 +1,21 @@
+uuid: ebb160da-c839-4805-aae8-abe0176d516f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_fits
+    - media.type.video
+  module:
+    - json_field
+id: media.video.field_media_file_fits
+field_name: field_media_file_fits
+entity_type: media
+bundle: video
+label: 'Media File Fits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: json_native

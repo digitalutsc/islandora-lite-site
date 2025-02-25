@@ -1,0 +1,8 @@
+uuid: b4a1e269-0f5e-4a7f-ac42-d2add0866729
+langcode: en
+status: true
+dependencies: {  }
+id: file_checksum
+label: field_media_file_fits
+field_name: 'File Checksum'
+json_path: fileinfo.md5checksum

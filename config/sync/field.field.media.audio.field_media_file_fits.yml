@@ -1,0 +1,21 @@
+uuid: 5deb98f6-4745-466e-8dfc-5d2b181807f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_fits
+    - media.type.audio
+  module:
+    - json_field
+id: media.audio.field_media_file_fits
+field_name: field_media_file_fits
+entity_type: media
+bundle: audio
+label: 'Media File Fits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: json_native

@@ -1,0 +1,8 @@
+uuid: e2dceb94-74a0-4460-b67f-7f2a1c43205f
+langcode: en
+status: true
+dependencies: {  }
+id: file_mimetype_multiple
+label: field_media_file_fits
+field_name: 'File Mimetype (Multiple)'
+json_path: 'identification.identity[0]."@attributes".mimetype'

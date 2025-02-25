@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Islandora Access'
 vid: islandora_access
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -1,0 +1,8 @@
+uuid: 098dbaa5-025f-4a45-a3bc-bc8c9e2c3c25
+langcode: en
+status: true
+dependencies: {  }
+id: file_size
+label: field_media_file_fits
+field_name: 'File Size'
+json_path: fileinfo.size

@@ -6,10 +6,12 @@ dependencies:
     - field.field.media.web_archive.field_access_terms
     - field.field.media.web_archive.field_base_url
     - field.field.media.web_archive.field_media_file
+    - field.field.media.web_archive.field_media_file_fits
     - field.field.media.web_archive.field_media_use
     - media.type.web_archive
   module:
     - file
+    - json_field
 id: media.web_archive.default
 targetEntityType: media
 bundle: web_archive
@@ -30,6 +32,14 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_media_file_fits:
+    type: json
+    label: above
+    settings:
+      attach_library: true
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   created: true

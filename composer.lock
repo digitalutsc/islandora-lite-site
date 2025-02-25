@@ -3896,136 +3896,6 @@
             }
         },
         {
-            "name": "drupal/file_entity",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/file_entity.git",
-                "reference": "8.x-2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/file_entity-8.x-2.1.zip",
-                "reference": "8.x-2.1",
-                "shasum": "528355921d7e2a9cc64fea12c136d28a60e39759"
-            },
-            "require": {
-                "drupal/core": "^10.2 || ^11",
-                "drupal/token": "^1",
-                "php": ">=8.0"
-            },
-            "require-dev": {
-                "drupal/hal": " ^9 || ^1 || ^2",
-                "drupal/pathauto": "^1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1735846124",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "aaron",
-                    "homepage": "https://www.drupal.org/user/33420"
-                },
-                {
-                    "name": "arthurf",
-                    "homepage": "https://www.drupal.org/user/27259"
-                },
-                {
-                    "name": "berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "cboyden",
-                    "homepage": "https://www.drupal.org/user/657902"
-                },
-                {
-                    "name": "damienmckenna",
-                    "homepage": "https://www.drupal.org/user/108450"
-                },
-                {
-                    "name": "dave reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "devin carlson",
-                    "homepage": "https://www.drupal.org/user/290182"
-                },
-                {
-                    "name": "Drupal media CI",
-                    "homepage": "https://www.drupal.org/user/3057985"
-                },
-                {
-                    "name": "Drupal Media Team",
-                    "homepage": "https://www.drupal.org/user/3260690"
-                },
-                {
-                    "name": "dsnopek",
-                    "homepage": "https://www.drupal.org/user/266527"
-                },
-                {
-                    "name": "dsutter",
-                    "homepage": "https://www.drupal.org/user/3357810"
-                },
-                {
-                    "name": "effulgentsia",
-                    "homepage": "https://www.drupal.org/user/78040"
-                },
-                {
-                    "name": "JacobSingh",
-                    "homepage": "https://www.drupal.org/user/68912"
-                },
-                {
-                    "name": "jeffm2001",
-                    "homepage": "https://www.drupal.org/user/262092"
-                },
-                {
-                    "name": "joseph.olstad",
-                    "homepage": "https://www.drupal.org/user/1321830"
-                },
-                {
-                    "name": "mpotter",
-                    "homepage": "https://www.drupal.org/user/616192"
-                },
-                {
-                    "name": "mxr576",
-                    "homepage": "https://www.drupal.org/user/315522"
-                },
-                {
-                    "name": "ParisLiakos",
-                    "homepage": "https://www.drupal.org/user/1011436"
-                },
-                {
-                    "name": "robeano",
-                    "homepage": "https://www.drupal.org/user/67660"
-                },
-                {
-                    "name": "slashrsm",
-                    "homepage": "https://www.drupal.org/user/744628"
-                },
-                {
-                    "name": "taran2L-1",
-                    "homepage": "https://www.drupal.org/user/364424"
-                }
-            ],
-            "description": "Extends Drupal file entities to be fieldable and viewable.",
-            "homepage": "https://www.drupal.org/project/file_entity",
-            "support": {
-                "source": "https://git.drupalcode.org/project/file_entity"
-            }
-        },
-        {
             "name": "drupal/file_replace",
             "version": "1.3.0",
             "source": {
@@ -4262,91 +4132,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filter_perms",
                 "issues": "https://www.drupal.org/project/issues/filter_perms?categories=All"
-            }
-        },
-        {
-            "name": "drupal/fits",
-            "version": "1.12.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/fits.git",
-                "reference": "8.x-1.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fits-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "e454844b3bece2f35907c96d80f4173ef657a78b"
-            },
-            "require": {
-                "drupal/advancedqueue": "^1.2",
-                "drupal/context": "^5.0@RC",
-                "drupal/core": "^8.8 || ^9 || ^10 || ^11",
-                "drupal/field_permissions": "^1.4",
-                "drupal/file_entity": "^2.0",
-                "drupal/json_field": "^1.2",
-                "mtdowling/jmespath.php": "2.6.1"
-            },
-            "require-dev": {
-                "drupal/coder": "*",
-                "phpunit/phpunit": "^8",
-                "sebastian/phpcpd": "*",
-                "squizlabs/php_codesniffer": "^3"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1726150759",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "scripts": {
-                "post-install-cmd": [
-                    "./vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer"
-                ],
-                "post-update-cmd": [
-                    "./vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer"
-                ],
-                "check": [
-                    "./vendor/bin/phpcs --standard=Drupal --ignore=*.md,vendor --extensions=php,module,inc,install,test,profile,theme,css,info .",
-                    "./vendor/bin/phpcpd --names='*.module,*.inc,*.test,*.php' --exclude=vendor ."
-                ]
-            },
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "The University of Toronto Scarborough Library's Digital Scholarship Unit (DSU)",
-                    "homepage": "https://www.drupal.org/user/173761",
-                    "email": "digitalscholarship@utsc.utoronto.ca",
-                    "role": "Owner"
-                },
-                {
-                    "name": "Kyle Huynh",
-                    "homepage": "https://www.drupal.org/user/3255474",
-                    "email": "kyle.huynh205@gmail.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Natkeeran",
-                    "homepage": "https://www.drupal.org/user/1016288"
-                }
-            ],
-            "description": "This Drupal 8/9 module consumes File Information Tool Set (Fits) to retrieve and extract technical metadata for fieldable files.",
-            "homepage": "https://www.drupal.org/project/fits",
-            "keywords": [
-                "Technical metadata",
-                "fits"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/fits",
-                "issues": "https://www.drupal.org/project/issues/fits"
             }
         },
         {
@@ -5411,6 +5196,60 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/json_field",
                 "issues": "https://www.drupal.org/project/issues/json_field"
+            }
+        },
+        {
+            "name": "drupal/json_field_processor",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/json_field_processor.git",
+                "reference": "898f66285d6a11f54ba277982e6670fa36ba8f11"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
+                "drupal/json_field": "*",
+                "drupal/search_api": "*",
+                "drupal/search_api_solr": "*",
+                "mtdowling/jmespath.php": "^2.6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1734471932",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "homura163",
+                    "homepage": "https://www.drupal.org/user/3836429",
+                    "email": "niclouie@outlook.com"
+                },
+                {
+                    "name": "kylehuynh",
+                    "homepage": "https://www.drupal.org/user/3255474"
+                },
+                {
+                    "name": "natkeeran",
+                    "homepage": "https://www.drupal.org/user/1016288"
+                }
+            ],
+            "description": "Module to index json field data using search API",
+            "homepage": "https://www.drupal.org/project/json_field_processor",
+            "support": {
+                "source": "https://git.drupalcode.org/project/json_field_processor"
             }
         },
         {
@@ -9856,25 +9695,25 @@
         },
         {
             "name": "mtdowling/jmespath.php",
-            "version": "2.6.1",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "9b87907a81b87bc76d19a7fb2d61e61486ee9edb"
+                "reference": "a2a865e05d5f420b50cc2f85bb78d565db12a6bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/9b87907a81b87bc76d19a7fb2d61e61486ee9edb",
-                "reference": "9b87907a81b87bc76d19a7fb2d61e61486ee9edb",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/a2a865e05d5f420b50cc2f85bb78d565db12a6bc",
+                "reference": "a2a865e05d5f420b50cc2f85bb78d565db12a6bc",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.4 || ^7.0 || ^8.0",
+                "php": "^7.2.5 || ^8.0",
                 "symfony/polyfill-mbstring": "^1.17"
             },
             "require-dev": {
-                "composer/xdebug-handler": "^1.4 || ^2.0",
-                "phpunit/phpunit": "^4.8.36 || ^7.5.15"
+                "composer/xdebug-handler": "^3.0.3",
+                "phpunit/phpunit": "^8.5.33"
             },
             "bin": [
                 "bin/jp.php"
@@ -9882,7 +9721,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
@@ -9899,6 +9738,11 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
@@ -9911,9 +9755,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jmespath/jmespath.php/issues",
-                "source": "https://github.com/jmespath/jmespath.php/tree/2.6.1"
+                "source": "https://github.com/jmespath/jmespath.php/tree/2.8.0"
             },
-            "time": "2021-06-14T00:11:39+00:00"
+            "time": "2024-09-04T18:46:31+00:00"
         },
         {
             "name": "myclabs/php-enum",
@@ -15078,11 +14922,10 @@
         "drupal/citation_select": 10,
         "drupal/config_update": 15,
         "drupal/context": 5,
-        "drupal/file_entity": 5,
         "drupal/filter_perms": 15,
-        "drupal/fits": 15,
         "drupal/flysystem": 5,
         "drupal/fullcalendar_solr": 10,
+        "drupal/json_field_processor": 20,
         "drupal/media_thumbnails_jp2": 10,
         "drupal/media_thumbnails_pdf": 10,
         "drupal/media_thumbnails_tiff": 10,

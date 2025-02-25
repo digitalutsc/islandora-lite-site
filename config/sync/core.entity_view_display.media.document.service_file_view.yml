@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.service_file_view
+    - field.field.media.document.field_access_terms
     - field.field.media.document.field_media_document
+    - field.field.media.document.field_media_file_fits
     - field.field.media.document.field_media_use
     - media.type.document
   module:
@@ -27,6 +29,7 @@ content:
 hidden:
   created: true
   field_access_terms: true
+  field_media_file_fits: true
   field_media_use: true
   langcode: true
   name: true

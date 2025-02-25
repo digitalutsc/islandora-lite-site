@@ -7,7 +7,6 @@ dependencies:
   module:
     - comment
     - contact
-    - file_entity
     - filter
     - fontawesome
     - matomo
@@ -30,5 +29,4 @@ permissions:
   - 'post comments'
   - 'skip comment approval'
   - 'use text format basic_html'
-  - 'view files'
   - 'view media'

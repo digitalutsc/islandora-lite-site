@@ -8,3 +8,4 @@ name: 'Internet Media Type'
 vid: internet_media_type
 description: 'MIME Types from https://www.iana.org/assignments/media-types/media-types.xhtml'
 weight: 0
+new_revision: false

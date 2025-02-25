@@ -10,7 +10,6 @@ dependencies:
     - comment
     - contextual
     - file
-    - file_entity
     - node
     - path
     - system
@@ -45,6 +44,5 @@ permissions:
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'view all revisions'
-  - 'view files'
   - 'view own unpublished content'
   - 'view the administration theme'

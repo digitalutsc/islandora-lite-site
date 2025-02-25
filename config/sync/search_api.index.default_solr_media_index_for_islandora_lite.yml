@@ -1,0 +1,155 @@
+uuid: 6c2b713c-34e2-4ebd-830f-f1cfca1f9ca0
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.default_solr_server
+  module:
+    - search_api_solr
+    - media
+    - search_api
+    - group_solr
+    - islandora_hocr
+    - islandora_object_thumbnail
+    - islandora_search_processor
+    - json_field_processor
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+      fuzzy_analyzer: true
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      use_language_undefined_as_fallback_language: false
+      specific_languages:
+        en: '0'
+      use_universal_collation: false
+id: default_solr_media_index_for_islandora_lite
+name: 'Default Solr media index for Islandora Lite'
+description: ''
+read_only: false
+field_settings:
+  json_field_processor_file_checksum:
+    label: 'Media File Checksum'
+    property_path: json_field_processor_file_checksum
+    type: string
+  json_field_processor_file_format_multiple:
+    label: 'Media File Format (Multiple)'
+    property_path: json_field_processor_file_format_multiple
+    type: string
+  json_field_processor_file_format_single:
+    label: 'Media File Format'
+    property_path: json_field_processor_file_format_single
+    type: string
+  json_field_processor_file_height:
+    label: 'Media File Height'
+    property_path: json_field_processor_file_height
+    type: string
+  json_field_processor_file_mimetype_multiple:
+    label: 'Media File Mimetype (Multiple)'
+    property_path: json_field_processor_file_mimetype_multiple
+    type: string
+  json_field_processor_file_mimetype_single:
+    label: 'Media File Mimetype (Single)'
+    property_path: json_field_processor_file_mimetype_single
+    type: string
+  json_field_processor_file_pronom_puid_multiple:
+    label: 'Media File PRONOM PUID (Multiple)'
+    property_path: json_field_processor_file_pronom_puid_multiple
+    type: string
+  json_field_processor_file_pronom_puid_single:
+    label: 'Media File PRONOM PUID (single)'
+    property_path: json_field_processor_file_pronom_puid_single
+    type: string
+  json_field_processor_file_size:
+    label: 'Media File Size'
+    property_path: json_field_processor_file_size
+    type: string
+  json_field_processor_file_width:
+    label: 'Media File Width'
+    property_path: json_field_processor_file_width
+    type: string
+  mid:
+    label: ID
+    datasource_id: 'entity:media'
+    property_path: mid
+    type: integer
+    dependencies:
+      module:
+        - media
+  name:
+    label: Name
+    datasource_id: 'entity:media'
+    property_path: name
+    type: string
+    dependencies:
+      module:
+        - media
+datasource_settings:
+  'entity:media':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  group_access_control: {  }
+  islandora_hocr_field: {  }
+  islandora_object_thumbnail: {  }
+  json_field_processor: {  }
+  language_with_fallback: {  }
+  linked_agent_by_type: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: default_solr_server

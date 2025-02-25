@@ -7,7 +7,6 @@ dependencies:
   module:
     - comment
     - contact
-    - file_entity
     - filter
     - media
     - system
@@ -22,5 +21,4 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'use text format restricted_html'
-  - 'view files'
   - 'view media'

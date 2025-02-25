@@ -1,0 +1,8 @@
+uuid: 38db2d65-de1f-4091-b555-1c4e46513b07
+langcode: en
+status: true
+dependencies: {  }
+id: file_mimetype_single
+label: field_media_file_fits
+field_name: 'File Mimetype (Single)'
+json_path: 'identification.identity."@attributes".mimetype'

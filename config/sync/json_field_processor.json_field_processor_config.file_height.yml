@@ -1,0 +1,8 @@
+uuid: f7ecb832-92c0-4b5c-96c1-260f213c4559
+langcode: en
+status: true
+dependencies: {  }
+id: file_height
+label: field_media_file_fits
+field_name: 'File Height'
+json_path: metadata.image.imageHeight

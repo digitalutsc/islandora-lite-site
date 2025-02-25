@@ -1,0 +1,8 @@
+uuid: 0569e7f2-64d4-4bd2-85b7-5242677dd3c5
+langcode: en
+status: true
+dependencies: {  }
+id: file_format_single
+label: field_media_file_fits
+field_name: 'File Format (single)'
+json_path: 'identification.identity."@attributes".format'
