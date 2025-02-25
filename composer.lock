@@ -1363,6 +1363,34 @@
             "time": "2024-02-14T01:43:45+00:00"
         },
         {
+            "name": "discoverygarden/dgi_fixity",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/discoverygarden/dgi_fixity.git",
+                "reference": "6d7b8738e29c6d59768e243ec6b741eb066cb4db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/discoverygarden/dgi_fixity/zipball/6d7b8738e29c6d59768e243ec6b741eb066cb4db",
+                "reference": "6d7b8738e29c6d59768e243ec6b741eb066cb4db",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/filehash": "^2.0"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "support": {
+                "issues": "https://github.com/discoverygarden/dgi_fixity/issues",
+                "source": "https://github.com/discoverygarden/dgi_fixity/tree/v1.3.2"
+            },
+            "time": "2024-09-16T18:08:23+00:00"
+        },
+        {
             "name": "discoverygarden/islandora_hocr",
             "version": "v1.3.4",
             "source": {
