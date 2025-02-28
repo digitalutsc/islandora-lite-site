@@ -1,0 +1,13 @@
+uuid: 34984ba2-0cf2-4493-9938-bb59ddcff50d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_fits
+_core:
+  default_config_hash: dcPMMCISHzep5j4jq1J78DQNpgQ_pMfi8KBXpynrHC4
+id: media_fits_action
+label: 'FITS - Generate and Extract Technical metadata for Media'
+type: media
+plugin: media_fits_action
+configuration: {  }
