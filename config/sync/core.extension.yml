@@ -85,6 +85,7 @@ module:
   matomo: 0
   media: 0
   media_file_delete: 0
+  media_fits: 0
   media_library: 0
   media_library_edit: 0
   media_thumbnails: 0

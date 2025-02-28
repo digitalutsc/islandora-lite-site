@@ -1,0 +1,21 @@
+uuid: cb76569d-cc2e-463f-8684-57ccc9ba06a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_fits
+_core:
+  default_config_hash: nBqdV0sFyZPNyjVYL9RdhwCyNjlYrl4IT3Ch6qqAgeI
+name: media_fits
+label: 'Fits on media'
+group: 'Technical Metadata'
+description: 'Generate metadata for Media'
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  fits_reaction:
+    id: media_fits_reaction
+    actions: media_fits_action
+    saved: false
+weight: 0
