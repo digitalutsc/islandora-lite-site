@@ -1324,12 +1324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/media_fits.git",
-                "reference": "5b6b2447ef0e6ddcabf3297a3f2830c3ae1775af"
+                "reference": "2792efee6271a22dfe2ae979fbcee4af00a29b65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/5b6b2447ef0e6ddcabf3297a3f2830c3ae1775af",
-                "reference": "5b6b2447ef0e6ddcabf3297a3f2830c3ae1775af",
+                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/2792efee6271a22dfe2ae979fbcee4af00a29b65",
+                "reference": "2792efee6271a22dfe2ae979fbcee4af00a29b65",
                 "shasum": ""
             },
             "require": {
@@ -1384,7 +1384,7 @@
                 "issues": "https://www.drupal.org/project/issues/media_fits",
                 "source": "https://git.drupalcode.org/project/media_fits"
             },
-            "time": "2025-02-28T20:24:14+00:00"
+            "time": "2025-03-03T18:40:49+00:00"
         },
         {
             "name": "digitalutsc/private_files_adapter",
