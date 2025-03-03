@@ -26,7 +26,6 @@ dependencies:
     - field.storage.node.field_edtf_date
     - field.storage.node.field_edtf_date_issued
     - search_api.server.default_solr_server
-    - core.entity_view_mode.node.search_index
   module:
     - search_api_solr
     - node
@@ -361,8 +360,8 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
-          article: search_index
-          page: search_index
+          article: default
+          page: default
   resource_type:
     label: 'Resource Type'
     datasource_id: 'entity:node'
