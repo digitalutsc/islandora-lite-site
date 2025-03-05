@@ -1,4 +1,4 @@
-uuid: c56010f4-6287-40cd-872a-574e3d57da20
+uuid: 48ad7fb9-729e-4888-90a1-3d0cbe5491e5
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - dgi_fixity
     - file
     - user
+_core:
+  default_config_hash: yfMpvPmmKtExQfDaHdeOs7YEd63-16z7fR6bBQyUBE0
 id: fixity_check_status
 label: 'Fixity Check Status'
 module: views
@@ -31,7 +33,7 @@ display:
           admin_label: ''
           entity_type: fixity_check
           plugin_id: bulk_form
-          label: ''
+          label: 'Bulk update'
           exclude: false
           alter:
             alter_text: false
@@ -64,7 +66,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
