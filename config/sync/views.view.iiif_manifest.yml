@@ -561,7 +561,7 @@ display:
           category_fallback: ''
           category_facets: {  }
           category_facets_concat_separator: ', '
-      path: node/%node/item-manifest
+      path: node/%node/manifest
     cache_metadata:
       max-age: -1
       contexts:
