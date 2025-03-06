@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - context
     - node
 id: handle_object_metadata_view
 label: 'Handle Object metadata view'
@@ -32,7 +31,7 @@ code: |-
     display:none !important;
   }
 
-  .contextual-region {
+  .view-item-metadata {
     margin: 0 !important;
     justify-content: left; 
     margin-bottom: 20px !important;
@@ -77,14 +76,6 @@ code: |-
 media: all
 preprocess: true
 conditions:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
