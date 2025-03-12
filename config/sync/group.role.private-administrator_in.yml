@@ -1,13 +1,13 @@
-uuid: 95c21a78-6a23-4415-81d2-bc24202db3c5
+uuid: 49bfa892-99f2-430f-b480-a43147e7a97f
 langcode: en
 status: true
 dependencies:
   config:
     - group.type.private
     - user.role.administrator
-id: private-admin
-label: Admin
-weight: -99
+id: private-administrator_in
+label: Administrator
+weight: null
 admin: true
 scope: insider
 global_role: administrator

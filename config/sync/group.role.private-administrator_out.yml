@@ -1,0 +1,15 @@
+uuid: 3e736359-fcc2-4b63-932c-f5b82f91dc00
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private
+    - user.role.administrator
+id: private-administrator_out
+label: Administrator
+weight: 1
+admin: true
+scope: outsider
+global_role: administrator
+group_type: private
+permissions: {  }
