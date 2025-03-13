@@ -234,13 +234,15 @@
       ],
       "post-install-cmd": [
          "@composer drupal:scaffold",
-         "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+         "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+         "rm -rf web/modules/contrib/islandora"
       ],
       "post-update-cmd": [
          "@composer drupal:scaffold",
          "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
          "@patch-files",
-         "DrupalProject\\composer\\ScriptHandler::applyDrupalPatches"
+         "DrupalProject\\composer\\ScriptHandler::applyDrupalPatches",
+         "rm -rf web/modules/contrib/islandora"
       ],
       "patch-files": [
          "php -r \"copy('https://raw.githubusercontent.com/digitalutsc/islandora_lite_installation/main/templates/mods.html.twig', './web/modules/contrib/rest_oai_pmh/templates/mods.html.twig');\""
