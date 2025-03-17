@@ -102,7 +102,11 @@
       {
          "type": "vcs",
          "url": "https://github.com/digitalutsc/media_fits"
-      }
+      },
+      {
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/media_fits"
+      }      
    ],
    "require": {
       "php": "^7.4 || ^8",
@@ -312,7 +316,7 @@
             "facets.patch": "https://www.drupal.org/files/issues/2024-08-28/facets-2937191-83-no-tests.patch"
          },
          "drupal/media_thumbnails": {
-            "media_thumbnail.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/media_thumbnail_v2.0.0.patch"
+            "media_thumbnail.patch": "assets/patches/media_thumbnails_march_17_2025.patch"
          }
       },
       "merge-plugin": {

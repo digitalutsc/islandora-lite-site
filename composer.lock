@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "529b4e37ffb50d5715da0616a133b0ae",
+    "content-hash": "8ec74ebcf237c840f6561bdfaf9acd11",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -1320,16 +1320,16 @@
         },
         {
             "name": "digitalutsc/media_fits",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/media_fits.git",
-                "reference": "d9f5d51d4610021c75fe11aa5a53423743fec1a4"
+                "reference": "846d6bab4f14548f804b3dafad071ac55e485992"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/d9f5d51d4610021c75fe11aa5a53423743fec1a4",
-                "reference": "d9f5d51d4610021c75fe11aa5a53423743fec1a4",
+                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/846d6bab4f14548f804b3dafad071ac55e485992",
+                "reference": "846d6bab4f14548f804b3dafad071ac55e485992",
                 "shasum": ""
             },
             "require": {
@@ -1384,7 +1384,7 @@
                 "issues": "https://www.drupal.org/project/issues/media_fits",
                 "source": "https://git.drupalcode.org/project/media_fits"
             },
-            "time": "2025-03-04T16:56:44+00:00"
+            "time": "2025-03-14T21:06:05+00:00"
         },
         {
             "name": "digitalutsc/private_files_adapter",
@@ -11359,16 +11359,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.7",
+            "version": "v0.12.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "d73fa3c74918ef4522bb8a3bf9cab39161c4b57c"
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/d73fa3c74918ef4522bb8a3bf9cab39161c4b57c",
-                "reference": "d73fa3c74918ef4522bb8a3bf9cab39161c4b57c",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/85057ceedee50c49d4f6ecaff73ee96adb3b3625",
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625",
                 "shasum": ""
             },
             "require": {
@@ -11432,9 +11432,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.7"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
             },
-            "time": "2024-12-10T01:58:33+00:00"
+            "time": "2025-03-16T03:05:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

@@ -1,0 +1,27 @@
+diff --git a/src/Plugin/MediaThumbnailManager.php b/src/Plugin/MediaThumbnailManager.php
+index 4878a86..a5c12ea 100644
+--- a/src/Plugin/MediaThumbnailManager.php
++++ b/src/Plugin/MediaThumbnailManager.php
+@@ -161,6 +161,9 @@ class MediaThumbnailManager extends DefaultPluginManager {
+     /** @var \Drupal\file\FileInterface $thumbnail */
+     $thumbnail = $this->getThumbnail($media);
+ 
++    if (empty($thumbnail))
++      return;
++
+     // Remove the thumbnail from the media entity.
+     $media->set('thumbnail', NULL);
+ 
+@@ -267,6 +270,12 @@ class MediaThumbnailManager extends DefaultPluginManager {
+       ]);
+       return NULL;
+     }
++
++    # If for any reason thumbnail could not be found, return null
++    if ($field_name == "thumbnail") {
++      return NULL;
++    }
++
+     // Return the corresponding file object, if any.
+     return $this->entityTypeManager
+       ->getStorage('file')
