@@ -1320,16 +1320,16 @@
         },
         {
             "name": "digitalutsc/media_fits",
-            "version": "1.0.0-beta2",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/media_fits.git",
-                "reference": "846d6bab4f14548f804b3dafad071ac55e485992"
+                "reference": "ea7d442b0e4182acc24bf02fc7701ec8150b5588"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/846d6bab4f14548f804b3dafad071ac55e485992",
-                "reference": "846d6bab4f14548f804b3dafad071ac55e485992",
+                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/ea7d442b0e4182acc24bf02fc7701ec8150b5588",
+                "reference": "ea7d442b0e4182acc24bf02fc7701ec8150b5588",
                 "shasum": ""
             },
             "require": {
@@ -1384,7 +1384,7 @@
                 "issues": "https://www.drupal.org/project/issues/media_fits",
                 "source": "https://git.drupalcode.org/project/media_fits"
             },
-            "time": "2025-03-14T21:06:05+00:00"
+            "time": "2025-03-18T13:25:09+00:00"
         },
         {
             "name": "digitalutsc/private_files_adapter",
@@ -2379,17 +2379,17 @@
         },
         {
             "name": "drupal/advancedqueue_runner",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/advancedqueue_runner.git",
-                "reference": "2.0.1"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/advancedqueue_runner-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "70eab0180b2e0465b64612af550a38d82a7bc6c1"
+                "url": "https://ftp.drupal.org/files/projects/advancedqueue_runner-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "7e85b52208be2a3498d15b5cfbcb2b3f607b7c18"
             },
             "require": {
                 "drupal/advancedqueue": "^1.2",
@@ -2406,8 +2406,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1725568817",
+                    "version": "2.0.2",
+                    "datestamp": "1742305629",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
