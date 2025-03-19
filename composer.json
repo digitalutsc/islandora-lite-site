@@ -295,7 +295,7 @@
             "workbench_integration.patch": "https://raw.githubusercontent.com/digitalutsc/islandora_lite_installation/main/patches/workbench_integration.patch"
          },
          "drupal/views_flipped_table": {
-            "accessibility_views_flipped_table_convert_to_layout_table.patch": "https://raw.githubusercontent.com/digitalutsc/islandora_lite_installation/main/patches/accessibility_views_flipped_table_convert_to_layout_table.patch"
+            "accessibility_views_flipped_table_convert_to_layout_table.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/accessibility_views_flipped_table_convert_to_layout_table.patch"
          },
          "drupal/ableplayer": {
             "ableplayer_fixentitydisplayissue.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-sandbox/config_sync_context/assets/patches/ableplayer_fixentitydisplayissue.patch"
