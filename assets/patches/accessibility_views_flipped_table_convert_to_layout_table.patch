@@ -1,0 +1,81 @@
+diff --git a/templates/views-view-flipped-table.html.twig b/templates/views-view-flipped-table.html.twig
+index ff5de63..8831d6f 100644
+--- a/templates/views-view-flipped-table.html.twig
++++ b/templates/views-view-flipped-table.html.twig
+@@ -15,7 +15,7 @@
+     sticky ? 'sticky-enabled',
+   ]
+ %}
+-<table{{ attributes.addClass(classes) }}>
++<table{{ attributes.addClass(classes) }} role="presentation">
+   {% if caption_needed %}
+     <caption>
+     {% if caption %}
+@@ -40,9 +40,9 @@
+                 ]
+               %}
+             {% endif %}
+-            <th{{ header[flipped_header_field_name].attributes.addClass(column_classes).setAttribute('scope', 'row') }}>
++            <td{{ header[flipped_header_field_name].attributes.addClass(column_classes).setAttribute('scope', 'row') }}>
+               {{ header[flipped_header_field_name].content }}
+-            </th>
++            </td>
+         {% endif %}
+         {% for key, column in flipped_header %}
+           {% if column.default_classes %}
+@@ -55,7 +55,7 @@
+               {% set column_classes = column_classes|merge(['views-field-' ~ field]) %}
+             {% endfor %}
+           {% endif %}
+-          <th{{ column.attributes.addClass(column_classes) }}>
++          <td{{ column.attributes.addClass(column_classes) }}>
+             {%- if column.wrapper_element -%}
+               <{{ column.wrapper_element }}>
+                 {%- if column.url -%}
+@@ -71,7 +71,7 @@
+                 {{- column.content }}{{ column.sort_indicator }}
+               {%- endif -%}
+             {%- endif -%}
+-          </th>
++          </td>
+         {% endfor %}
+       </tr>
+     </thead>
+@@ -89,23 +89,25 @@
+               ]
+             %}
+           {% endif %}
+-          <th{{ header_column.attributes.addClass(column_classes).setAttribute('scope', 'row') }}>
+-            {%- if header_column.wrapper_element -%}
+-              <{{ header_column.wrapper_element }}>
++          <td{{ header_column.attributes.addClass(column_classes).setAttribute('scope', 'row') }}>
++            <strong>
++              {%- if header_column.wrapper_element -%}
++                <{{ header_column.wrapper_element }}>
++                  {%- if header_column.url -%}
++                    <a href="{{ header_column.url }}" title="{{ header_column.title }}" rel="nofollow">{{ header_column.content }}{{ header_column.sort_indicator }}</a>
++                  {%- else -%}
++                    {{ header_column.content }}{{ header_column.sort_indicator }}
++                  {%- endif -%}
++                </{{ header_column.wrapper_element }}>
++              {%- else -%}
+                 {%- if header_column.url -%}
+                   <a href="{{ header_column.url }}" title="{{ header_column.title }}" rel="nofollow">{{ header_column.content }}{{ header_column.sort_indicator }}</a>
+                 {%- else -%}
+-                  {{ header_column.content }}{{ header_column.sort_indicator }}
++                  {{- header_column.content }}{{ header_column.sort_indicator }}
+                 {%- endif -%}
+-              </{{ header_column.wrapper_element }}>
+-            {%- else -%}
+-              {%- if header_column.url -%}
+-                <a href="{{ header_column.url }}" title="{{ header_column.title }}" rel="nofollow">{{ header_column.content }}{{ header_column.sort_indicator }}</a>
+-              {%- else -%}
+-                {{- header_column.content }}{{ header_column.sort_indicator }}
+               {%- endif -%}
+-            {%- endif -%}
+-          </th>
++            </strong>
++          </td>
+         {% endif %}
+         {% for index, column in row.columns %}
+           {% if column.default_classes %}
