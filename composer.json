@@ -173,7 +173,7 @@
       "drupal/views_bulk_operations": "^4.2",
       "drupal/views_data_export": "1.5",
       "drupal/views_field_view": "^1.0@beta",
-      "drupal/views_flipped_table": "^2.0",
+      "drupal/views_flipped_table": "2.0.3",
       "drupal/views_timelinejs": "^4.0",
       "drush/drush": "^12",
       "islandora/islandora_iiif": "^1",
@@ -293,6 +293,9 @@
       "patches": {
          "mjordan/islandora_workbench_integration": {
             "workbench_integration.patch": "https://raw.githubusercontent.com/digitalutsc/islandora_lite_installation/main/patches/workbench_integration.patch"
+         },
+         "drupal/views_flipped_table": {
+            "accessibility_views_flipped_table_convert_to_layout_table.patch": "https://raw.githubusercontent.com/digitalutsc/islandora_lite_installation/main/patches/accessibility_views_flipped_table_convert_to_layout_table.patch"
          },
          "drupal/ableplayer": {
             "ableplayer_fixentitydisplayissue.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-sandbox/config_sync_context/assets/patches/ableplayer_fixentitydisplayissue.patch"
