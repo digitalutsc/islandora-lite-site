@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bf3a83d6839dfdb0779165e134b0595",
+    "content-hash": "56b94ce1f18989252b1996d4bfbf620c",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -9080,6 +9080,31 @@
                 "issues": "https://github.com/digitalutsc/islandora_breadcrumbs/issues"
             },
             "time": "2024-02-16T20:57:43+00:00"
+        },
+        {
+            "name": "islandora_lite/islandora_iiif_hocr_extend",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/digitalutsc/islandora_iiif_hocr_extend.git",
+                "reference": "2e7fcf03d717ddc51a73c5e6d42a03663c6e6bc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/digitalutsc/islandora_iiif_hocr_extend/zipball/2e7fcf03d717ddc51a73c5e6d42a03663c6e6bc8",
+                "reference": "2e7fcf03d717ddc51a73c5e6d42a03663c6e6bc8",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "description": "Extends Islandora IIIF HOCR module to extract and index text version of hocr xml data.",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://github.com/digitalutsc/islandora_iiif_hocr_extend/tree/1.0.0",
+                "issues": "https://github.com/digitalutsc/islandora_iiif_hocr_extend/issues"
+            },
+            "time": "2024-10-10T17:22:02+00:00"
         },
         {
             "name": "islandora_lite/islandora_object_thumbnail",
