@@ -106,7 +106,11 @@
       {
          "type": "vcs",
          "url": "https://github.com/digitalutsc/media_fits"
-      }      
+      },
+      {
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/islandora_iiif_hocr_extend"
+      }
    ],
    "require": {
       "php": "^7.4 || ^8",
@@ -193,7 +197,8 @@
       "wikimedia/composer-merge-plugin": "^2.0",
       "zaporylie/composer-drupal-optimizations": "^1.2",
       "digitalutsc/media_fits": "^1.0.0-beta",      
-      "drupal/imagemagick": "^4.0"
+      "drupal/imagemagick": "^4.0",
+      "drupal/islandora_iiif_hocr_extend": "^1.0"
    },
    "require-dev": {
       "drupal/devel": "^5.0"
