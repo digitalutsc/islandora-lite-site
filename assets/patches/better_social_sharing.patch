@@ -1,16 +1,3 @@
-From 9fe2242b0130f9f6c526de59154dce271c7ddbd8 Mon Sep 17 00:00:00 2001
-From: Shubham Garg <gargshubham2005@gmail.com>
-Date: Mon, 3 Mar 2025 14:58:13 -0500
-Subject: [PATCH] better_social_sharing_rebased
-
----
- better_social_sharing_buttons.libraries.yml   |  1 +
- better_social_sharing_buttons.module          | 29 +++++++++++++++++++
- js/copy-current-url.js                        | 11 +++++--
- src/Form/BetterSocialSharingButtonsForm.php   |  9 ++++++
- .../better-social-sharing-buttons.html.twig   | 29 +++++++++++--------
- 5 files changed, 64 insertions(+), 15 deletions(-)
-
 diff --git a/better_social_sharing_buttons.libraries.yml b/better_social_sharing_buttons.libraries.yml
 index 327df23..7bf5edd 100644
 --- a/better_social_sharing_buttons.libraries.yml
@@ -24,7 +11,7 @@ index 327df23..7bf5edd 100644
  bluesky:
    version: 1.x
 diff --git a/better_social_sharing_buttons.module b/better_social_sharing_buttons.module
-index e1e58ac..a15d345 100644
+index e1e58ac..47e90f4 100644
 --- a/better_social_sharing_buttons.module
 +++ b/better_social_sharing_buttons.module
 @@ -10,6 +10,9 @@ use Drupal\Core\Entity\EntityInterface;
@@ -59,7 +46,7 @@ index e1e58ac..a15d345 100644
 +        if (isset($url)) {
 +          $variables['over_rides']['preferred_url'] = $url;
 +          $variables['#cache']['max-age'] = 0;
-+          $variables['#attached']['library'][] = 'copy-current-url/copy-current-url-js';
++          $variables['#attached']['library'][] = 'better_social_sharing_buttons/copy-current-url';
 +          // pass variable to Drupal.Settings
 +          $variables['#attached']['drupalSettings']['url'] = $url;
 +        }
@@ -261,6 +248,3 @@ index 888c7a9..a5f25f8 100644
              <svg aria-hidden="true" width="{{ items.width }}" height="{{ items.width }}" style="border-radius:{{ items.radius }};">
                  <use href="{{ social_buttons_sprite }}#email" />
              </svg>
--- 
-2.43.0
-

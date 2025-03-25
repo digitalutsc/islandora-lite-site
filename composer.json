@@ -308,7 +308,7 @@
             "openseadragon.authentication.patch": "https://raw.githubusercontent.com/digitalutsc/private_files_adapter/main/scripts/openseadragon.authentication.patch"
          },
          "drupal/better_social_sharing_buttons":{
-           "custom_link.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/better_social_sharing_rebased.patch"
+           "custom_link.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/better_social_sharing.patch"
          },
          "discoverygarden/islandora_hocr": {
             "islandora_hocr_lite_1.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_hocr_lite.patch"
