@@ -323,16 +323,16 @@
         },
         {
             "name": "citation-style-language/styles",
-            "version": "v0.0.632",
+            "version": "v0.0.643",
             "source": {
                 "type": "git",
                 "url": "https://github.com/citation-style-language/styles.git",
-                "reference": "88cf4433f77c5a580b6daed2dac1adafb67f8269"
+                "reference": "2523a56c18462dbe89b15a02813722e5f6ae34b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/88cf4433f77c5a580b6daed2dac1adafb67f8269",
-                "reference": "88cf4433f77c5a580b6daed2dac1adafb67f8269",
+                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/2523a56c18462dbe89b15a02813722e5f6ae34b4",
+                "reference": "2523a56c18462dbe89b15a02813722e5f6ae34b4",
                 "shasum": ""
             },
             "type": "library",
@@ -350,7 +350,7 @@
             "homepage": "http://citationstyles.org/",
             "support": {
                 "issues": "https://github.com/citation-style-language/styles/issues",
-                "source": "https://github.com/citation-style-language/styles/tree/v0.0.632"
+                "source": "https://github.com/citation-style-language/styles/tree/v0.0.643"
             },
             "funding": [
                 {
@@ -358,7 +358,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-05T01:27:53+00:00"
+            "time": "2025-03-19T12:12:42+00:00"
         },
         {
             "name": "composer/installers",
@@ -1320,16 +1320,16 @@
         },
         {
             "name": "digitalutsc/media_fits",
-            "version": "1.0.0-beta4",
+            "version": "1.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/media_fits.git",
-                "reference": "49e997ac952f3d7230789e68a98a748067b984cf"
+                "reference": "b637d993f6f7fb7de9d42c03a97e3bb3123fcb4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/49e997ac952f3d7230789e68a98a748067b984cf",
-                "reference": "49e997ac952f3d7230789e68a98a748067b984cf",
+                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/b637d993f6f7fb7de9d42c03a97e3bb3123fcb4f",
+                "reference": "b637d993f6f7fb7de9d42c03a97e3bb3123fcb4f",
                 "shasum": ""
             },
             "require": {
@@ -1384,7 +1384,7 @@
                 "issues": "https://www.drupal.org/project/issues/media_fits",
                 "source": "https://git.drupalcode.org/project/media_fits"
             },
-            "time": "2025-03-21T17:00:57+00:00"
+            "time": "2025-03-25T01:57:11+00:00"
         },
         {
             "name": "digitalutsc/private_files_adapter",
