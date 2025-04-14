@@ -131,7 +131,7 @@
       "drupal/context": "^5@RC",
       "drupal/controlled_access_terms": "^2",
       "drupal/core-composer-scaffold": "^10.2",
-      "drupal/core-recommended": "^10.2",
+      "drupal/core-recommended": "^10.4",
       "drupal/csvfile_formatter": "^1.0",
       "drupal/devel": "^5.0",
       "drupal/facets": "2.0.9",
@@ -194,7 +194,8 @@
       "zaporylie/composer-drupal-optimizations": "^1.2",
       "digitalutsc/media_fits": "^1.0.0-beta",      
       "drupal/imagemagick": "^4.0",
-      "islandora_lite/islandora_iiif_hocr_extend": "^1.0"
+      "islandora_lite/islandora_iiif_hocr_extend": "^1.0", 
+      "drupal/group" :"3.3.4"
    },
    "require-dev": {
       "drupal/devel": "^5.0"
@@ -323,7 +324,10 @@
          },
          "drupal/views_data_export": {
             "views_data_export.patch": "https://www.drupal.org/files/issues/2025-03-04/views_data_export-2887450-112--8.x-1.5--clean.patch"
-         }         
+         },
+         "drupal/group": {
+            "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/view_batch_export_issue.patch"
+         }
       },
       "merge-plugin": {
          "include": [
