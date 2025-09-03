@@ -327,6 +327,22 @@
          },
          "drupal/group": {
             "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/view_batch_export_issue.patch"
+         },
+         "drupal/leaflet_geojson": {
+            "leaflet_geojson.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/leaflet_geojson.patch",
+            "leaflet_geojson_resetview_scrolldisable.patch":"https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/main/all/patches/leaflet_geojson_resetview_scrolldisable.patch"
+         },
+         "drupal/views_geojson": {
+            "views_geojson_bounding_box_add_latlon_3107173-3.patch": "https://www.drupal.org/files/issues/2020-03-06/views_geojson_bounding_box_add_latlon_3107173-3.patch"
+         },
+         "drupal/advanced_search": {
+            "temp-pending-prs-advanced-search.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/temp-pending-prs-advanced-search.patch"
+         },
+         "drupal/pdf": {
+            "pdf-with-proxy-server.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/pdf-with-proxy-server.patch"
+         },
+         "drupal/replaywebpage": {
+            "replaywebpage_proxy_server.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/replaywebpage_proxy_server.patch"
          }
       },
       "merge-plugin": {
