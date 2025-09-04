@@ -131,7 +131,7 @@
       "drupal/context": "^5@RC",
       "drupal/controlled_access_terms": "^2",
       "drupal/core-composer-scaffold": "^10.2",
-      "drupal/core-recommended": "^10.6",
+      "drupal/core-recommended": "^10.5",
       "drupal/csvfile_formatter": "^1.0",
       "drupal/devel": "^5.0",
       "drupal/facets": "2.0.9",
