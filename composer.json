@@ -134,7 +134,7 @@
       "drupal/core-recommended": "^10.5",
       "drupal/csvfile_formatter": "^1.0",
       "drupal/devel": "^5.0",
-      "drupal/facets": "2.0.9",
+      "drupal/facets": "2.0.10",
       "drupal/field_group": "^3.4",
       "drupal/field_permissions": "^1.2",
       "drupal/filemime": "^1.11",
