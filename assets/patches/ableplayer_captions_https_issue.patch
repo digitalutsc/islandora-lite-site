@@ -1,0 +1,11 @@
+diff --git a/templates/ableplayer-caption.html.twig b/templates/ableplayer-caption.html.twig
+index 441e200..9d042a2 100644
+--- a/templates/ableplayer-caption.html.twig
++++ b/templates/ableplayer-caption.html.twig
+@@ -6,5 +6,5 @@
+ */
+ #}
+ {% for file in files %}
+-	<track kind="captions" {{ file.source_attributes }}>
++	<track kind="captions" {{ file.source_attributes | replace({'http://': 'https://'}) | raw }}>
+ {% endfor %}
