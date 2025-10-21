@@ -126,7 +126,7 @@
       "drupal/archive_list_contents": "^1.0@beta",
       "drupal/asset_injector": "^2.19",
       "drupal/better_social_sharing_buttons": "4.1.0",
-      "drupal/citation_select": "^2.0@beta",
+      "drupal/citation_select": "^2.0",
       "drupal/config_update": "^2.0@alpha",
       "drupal/context": "^5@RC",
       "drupal/controlled_access_terms": "^2",
