@@ -169,7 +169,7 @@
       "drupal/term_condition": "^2.0",
       "drupal/triplestore_indexer": "^2.1",
       "drupal/views_bulk_edit": "^3.0",
-      "drupal/views_bulk_operations": "^4.2",
+      "drupal/views_bulk_operations": "~4.2.4",
       "drupal/views_data_export": "1.7",
       "drupal/views_field_view": "^1.0@beta",
       "drupal/views_flipped_table": "2.0.3",
