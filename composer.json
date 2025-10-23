@@ -52,6 +52,18 @@
          }
       },
       {
+         "type": "package",
+         "package": {
+            "name": "library/jsoneditor",
+            "version": "6.0.0",
+            "type": "drupal-library",
+            "dist": {
+               "url": "https://github.com/josdejong/jsoneditor/archive/refs/tags/v6.0.0.zip",
+               "type": "zip"
+            }
+         }
+      },      
+      {
          "type": "vcs",
          "url": "https://github.com/digitalutsc/islandora_iiif"
       },       
@@ -187,6 +199,7 @@
       "library/masonry": "3.3.2",
       "library/pdf.js": "2.10.377",
       "library/timeline3": "3.8.18",
+      "library/jsoneditor": "6.0.0",
       "mjordan/islandora_workbench_integration": "dev-main",
       "vlucas/phpdotenv": "^2.4",
       "wikimedia/composer-merge-plugin": "^2.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fe758f41366ea10ffacec63454ff613",
+    "content-hash": "f23801a6510568ee9c6340f9b01305cc",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -9660,6 +9660,15 @@
                 }
             ],
             "time": "2024-09-21T08:32:55+00:00"
+        },
+        {
+            "name": "library/jsoneditor",
+            "version": "6.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/josdejong/jsoneditor/archive/refs/tags/v6.0.0.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "library/masonry",
