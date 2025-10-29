@@ -85,7 +85,6 @@ module:
   language: 0
   layout_discovery: 0
   link: 0
-  matomo: 0
   media: 0
   media_file_delete: 0
   media_fits: 0
