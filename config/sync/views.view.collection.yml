@@ -1185,7 +1185,7 @@ display:
         options: {  }
       defaults:
         cache: false
-      display_extenders: { }
+      display_extenders:
         views_merge_rows:
           merge_rows: false
           field_config: {  }
