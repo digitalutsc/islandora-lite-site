@@ -1001,7 +1001,7 @@ display:
           required: false
       group_by: true
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
         views_merge_rows:
           merge_rows: false
           field_config: {  }
