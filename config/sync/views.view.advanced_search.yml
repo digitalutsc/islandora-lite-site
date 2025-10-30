@@ -1390,18 +1390,7 @@ display:
           plugin_id: result
           empty: false
           content: '<div id="ajax-page-summary" class="pager__summary">Displaying @start - @end of @total</div>'
-      display_extenders:
-        matomo:
-          enabled: false
-          keyword_gets: ''
-          keyword_behavior: first
-          keyword_concat_separator: ' '
-          category_behavior: none
-          category_gets: ''
-          category_concat_separator: ' '
-          category_fallback: ''
-          category_facets: {  }
-          category_facets_concat_separator: ', '
+      display_extenders: { }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1442,18 +1431,7 @@ display:
           plugin_id: result
           empty: false
           content: '<div id="ajax-page-summary" class="pager__summary">Displaying @start - @end of @total</div>'
-      display_extenders:
-        matomo:
-          enabled: false
-          keyword_gets: ''
-          keyword_behavior: first
-          keyword_concat_separator: ' '
-          category_behavior: none
-          category_gets: ''
-          category_concat_separator: ' '
-          category_fallback: ''
-          category_facets: {  }
-          category_facets_concat_separator: ', '
+      display_extenders: { }
       path: search-results
     cache_metadata:
       max-age: -1

@@ -9,7 +9,6 @@ dependencies:
     - contact
     - filter
     - fontawesome
-    - matomo
     - media
     - shortcut
     - system
@@ -25,7 +24,6 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access shortcuts'
   - 'access site-wide contact form'
-  - 'opt-in or out of matomo tracking'
   - 'post comments'
   - 'skip comment approval'
   - 'use text format basic_html'
