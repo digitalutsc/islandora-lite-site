@@ -4497,27 +4497,27 @@
         },
         {
             "name": "drupal/fullcalendar_solr",
-            "version": "1.0.0-beta9",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fullcalendar_solr.git",
-                "reference": "1.0.0-beta9"
+                "reference": "1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fullcalendar_solr-1.0.0-beta9.zip",
-                "reference": "1.0.0-beta9",
-                "shasum": "6376dd60520f7cd10f358384b01d7ff1f0c4cca6"
+                "url": "https://ftp.drupal.org/files/projects/fullcalendar_solr-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "e34d8c17c18a8c2b48cbbeefbe0d697ecb1fb730"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^9 || ^10 || ^11",
                 "drupal/search_api": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta9",
-                    "datestamp": "1707141753",
+                    "version": "1.0.1",
+                    "datestamp": "1762442559",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -4542,7 +4542,7 @@
                     "homepage": "https://www.drupal.org/user/3255474"
                 },
                 {
-                    "name": "Natkeeran",
+                    "name": "natkeeran",
                     "homepage": "https://www.drupal.org/user/1016288"
                 }
             ],

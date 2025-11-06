@@ -153,7 +153,7 @@
       "drupal/filter_perms": "^1.0@alpha",
       "drupal/flysystem": "^2.1@RC",
       "drupal/fontawesome": "^2.26",
-      "drupal/fullcalendar_solr": "^1.0@beta",
+      "drupal/fullcalendar_solr": "^1.0",
       "drupal/geolocation": "^3.12",
       "drupal/islandora_mirador": "^2.3",
       "drupal/json_field": "^1.3",
