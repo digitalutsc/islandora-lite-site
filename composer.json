@@ -132,7 +132,7 @@
       "discoverygarden/islandora_hocr": "v1.3.4",
       "drupal/ableplayer": "^3.0",
       "drupal/admin_toolbar": "^3.1",
-      "drupal/advanced_search": "^2.0",
+      "drupal/advanced_search": "^2.2",
       "drupal/advancedqueue": "^1.0@RC",
       "drupal/advancedqueue_runner": "^2.0@alpha",
       "drupal/archive_list_contents": "^1.0@beta",
@@ -343,9 +343,6 @@
          },
          "drupal/views_geojson": {
             "views_geojson_bounding_box_add_latlon_3107173-3.patch": "https://www.drupal.org/files/issues/2020-03-06/views_geojson_bounding_box_add_latlon_3107173-3.patch"
-         },
-         "drupal/advanced_search": {
-            "temp-pending-prs-advanced-search.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/temp-pending-prs-advanced-search.patch"
          }
       },
       "merge-plugin": {
