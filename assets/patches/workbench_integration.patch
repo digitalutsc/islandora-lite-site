@@ -1,5 +1,5 @@
 diff --git a/islandora_workbench_integration.info.yml b/islandora_workbench_integration.info.yml
-index 976b32f..1e2b0ce 100644
+index 2d1dfdd..913f9e6 100644
 --- a/islandora_workbench_integration.info.yml
 +++ b/islandora_workbench_integration.info.yml
 @@ -3,6 +3,4 @@ description: "Utilities for use with Islandora Workbench."
@@ -8,4 +8,4 @@ index 976b32f..1e2b0ce 100644
  core_version_requirement: ^10 || ^11
 -dependencies:
 -  - islandora:islandora
- version: "1.1.0"
+ version: "1.1.1"
