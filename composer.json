@@ -200,7 +200,7 @@
       "library/pdf.js": "2.10.377",
       "library/timeline3": "3.8.18",
       "library/jsoneditor": "6.0.0",
-      "mjordan/islandora_workbench_integration": "dev-main",
+      "mjordan/islandora_workbench_integration": "1.2.0",
       "vlucas/phpdotenv": "^2.4",
       "wikimedia/composer-merge-plugin": "^2.0",
       "zaporylie/composer-drupal-optimizations": "^1.2",
