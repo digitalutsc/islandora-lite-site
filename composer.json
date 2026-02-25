@@ -313,9 +313,6 @@
          "drupal/ableplayer": {
             "ableplayer_fixentitydisplayissue.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/ableplayer_fixentitydisplayissue.patch"
          },
-         "islandora/openseadragon": {
-            "openseadragon.authentication.patch": "https://raw.githubusercontent.com/digitalutsc/private_files_adapter/main/scripts/openseadragon.authentication.patch"
-         },
          "drupal/better_social_sharing_buttons":{
            "custom_link.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/better_social_sharing.patch"
          },
@@ -327,9 +324,6 @@
          },
          "drupal/islandora_mirador": {
             "islandora_mirador_lite.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_mirador_lite.patch"
-         },
-         "drupal/facets": {
-            "facets.patch": "https://www.drupal.org/files/issues/2024-08-28/facets-2937191-83-no-tests.patch"
          },
          "drupal/media_thumbnails": {
             "media_thumbnail.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/media_thumbnails_march_17_2025.patch"
