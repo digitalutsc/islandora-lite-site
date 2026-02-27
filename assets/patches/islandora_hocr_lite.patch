@@ -1,14 +1,13 @@
 diff --git a/islandora_hocr.info.yml b/islandora_hocr.info.yml
-index 1aca0f9..598e167 100644
+index 2042a7b..7b7b603 100644
 --- a/islandora_hocr.info.yml
 +++ b/islandora_hocr.info.yml
 @@ -4,4 +4,4 @@ package: DGI Helpers
  type: module
- core_version_requirement: ^9 || ^10
+ core_version_requirement: ^10 || ^11
  dependencies:
 -  - islandora:islandora
 +  - drupal:search_api_solr
-\ No newline at end of file
 diff --git a/src/Plugin/Action/HocrDerivative.php b/src/Plugin/Action/HocrDerivative.php
 deleted file mode 100644
 index 4ae1d45..0000000
@@ -49,10 +48,10 @@ index 4ae1d45..0000000
 -
 -}
 diff --git a/src/Plugin/search_api/processor/HOCRField.php b/src/Plugin/search_api/processor/HOCRField.php
-index d3666de..61fd4d6 100644
+index 8060ca0..1973816 100644
 --- a/src/Plugin/search_api/processor/HOCRField.php
 +++ b/src/Plugin/search_api/processor/HOCRField.php
-@@ -101,7 +101,7 @@ class HOCRField extends ProcessorPluginBase {
+@@ -136,7 +136,7 @@ class HOCRField extends ProcessorPluginBase {
        ],
      ];
      $data['file']['callable'] = function () use ($entity, &$data) {
@@ -60,11 +59,12 @@ index d3666de..61fd4d6 100644
 +      $data['file']['value'] ??= $this->getFileLite($entity);
        return $data['file']['value'];
      };
-     $data['uri']['callable'] = function () use (&$data) {
-@@ -133,6 +133,54 @@ class HOCRField extends ProcessorPluginBase {
+     $data['uri']['callable'] = static function () use (&$data) {
+@@ -211,6 +211,56 @@ class HOCRField extends ProcessorPluginBase {
  
    }
  
++
 +  /**
 +   * Find the target file for this node.
 +   *
@@ -75,13 +75,14 @@ index d3666de..61fd4d6 100644
 +   *   The file containing HOCR, or NULL.
 +   */
 +  protected function getFileLite(NodeInterface $node) : ?FileInterface {
-+    if (!$node->hasField('field_islandora_object_media')) 
++    if (!$node->hasField('field_islandora_object_media')) {
 +      return NULL;
++    }
 +    $hocr_media = [];
-+    # Get all media entities referenced by this node.
++    // Get all media entities referenced by this node.
 +    $medias = $node->get('field_islandora_object_media')->referencedEntities();
 +
-+    # Find all media entities that are hOCR media uses.
++    // Find all media entities that are hOCR media uses.
 +    foreach ($medias as $media) {
 +      $uri = $media->field_media_use->entity->field_external_uri->uri;
 +      if ($uri === 'https://discoverygarden.ca/use#hocr') {
@@ -91,7 +92,7 @@ index d3666de..61fd4d6 100644
 +
 +    $anonymous = new AnonymousUserSession();
 +
-+    # Go through all the hOCR files and return the first one that is accessible by anonymous users.
++    // Go through all the hOCR files and return the first one that is accessible by anonymous users.
 +    foreach ($hocr_media as $media) {
 +      if (!$media) {
 +        continue;
@@ -103,7 +104,7 @@ index d3666de..61fd4d6 100644
 +      if ($source instanceof File) {
 +        $fid = $source->getSourceFieldValue($media);
 +        $file = $this->entityTypeManager->getStorage('file')->load($fid);
-+        if (!$file->access('view', $anonymous, FALSE)) {
++        if (!$file || !$file->access('view', $anonymous, FALSE)) {
 +          continue;
 +        }
 +        return $file;

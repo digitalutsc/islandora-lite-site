@@ -47,9 +47,9 @@ index 9d27632..c377ef8 100644
      _permission: 'administer site configuration'
 +islandora_mirador.service_worker:
 +  path: '/islandora_mirador_service_worker'
-+  defaults: 
-+    _controller: '\Drupal\islandora_mirador\Controller\ServiceWorkerController::serve' 
-+  requirements: 
++  defaults:
++    _controller: '\Drupal\islandora_mirador\Controller\ServiceWorkerController::serve'
++  requirements:
 +    _permission: 'access content'
 diff --git a/js/mirador_viewer.js b/js/mirador_viewer.js
 index c520e40..2f4f33d 100644
@@ -356,7 +356,7 @@ index 3f1250a..99f70c0 100644
 +
 +    $media_fields = [];
 +    foreach ($field_names as $field_name => $field_storage) {
-+      if ($field_storage->getType() === 'entity_reference' 
++      if ($field_storage->getType() === 'entity_reference'
 +          && $field_storage->getSetting('target_type') === 'media') {
 +        $media_fields[] = $field_name;
 +      }
