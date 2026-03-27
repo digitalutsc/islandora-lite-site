@@ -1,6 +1,7 @@
 {
    "name": "islandora/islandora-sandbox",
    "description": "Project template for Drupal 8 projects with composer",
+   "_version": "2.2.0",
    "type": "project",
    "license": "GPL-2.0-or-later",
    "authors": [
@@ -89,10 +90,6 @@
       },
       {
          "type": "vcs",
-         "url": "https://github.com/digitalutsc/ableplayer_extend"
-      },
-      {
-         "type": "vcs",
          "url": "https://github.com/digitalutsc/islandora_breadcrumbs"
       },
       {
@@ -123,7 +120,7 @@
    "require": {
       "php": "^7.4 || ^8",
       "born-digital/islandora_iiif_hocr": "2.0.7",
-      "composer/installers": "^1.9",
+      "composer/installers": "^2.0",
       "cweagans/composer-patches": "^1.9",
       "digitalutsc/group_solr": "^1.0.0-beta",
       "digitalutsc/islandora_group": "^2.0-beta",
@@ -143,15 +140,14 @@
       "drupal/context": "^5@RC",
       "drupal/controlled_access_terms": "^2",
       "drupal/core-composer-scaffold": "^10.2",
-      "drupal/core-recommended": "^10.5",
+      "drupal/core-recommended": "^10.6",
       "drupal/csvfile_formatter": "^1.0",
       "drupal/devel": "^5.0",
       "drupal/facets": "2.0.10",
       "drupal/field_group": "^3.4",
       "drupal/field_permissions": "^1.2",
       "drupal/filemime": "^1.11",
-      "drupal/filter_perms": "^1.0@alpha",
-      "drupal/flysystem": "^2.1@RC",
+      "drupal/filter_perms": "^2.0",
       "drupal/fontawesome": "^2.26",
       "drupal/fullcalendar_solr": "^1.0",
       "drupal/geolocation": "^3.12",
@@ -187,7 +183,7 @@
       "drupal/views_flipped_table": "2.0.3",
       "drupal/views_timelinejs": "^4.0",
       "drush/drush": "^12",
-      "islandora/islandora_iiif": "^1.1",
+      "islandora/islandora_iiif": "^1.0",
       "islandora/views_nested_details": "^1.0.0-beta",
       "islandora_lite/ableplayer_extend": "^1.0.0-beta",
       "islandora_lite/facets_year_range": "1.0.1",
@@ -201,7 +197,6 @@
       "library/timeline3": "3.8.18",
       "library/jsoneditor": "6.0.0",
       "mjordan/islandora_workbench_integration": "1.2.0",
-      "vlucas/phpdotenv": "^2.4",
       "wikimedia/composer-merge-plugin": "^2.0",
       "zaporylie/composer-drupal-optimizations": "^1.2",
       "digitalutsc/media_fits": "^1.0.0-beta",      
