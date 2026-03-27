@@ -323,7 +323,7 @@
             "islandora_iiif_hocr_lite.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_iiif_hocr_lite.patch"
          },
          "drupal/islandora_mirador": {
-            "islandora_mirador_lite.patch": "assets/patches/islandora_mirador_lite.patch"
+            "islandora_mirador_lite.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_mirador_lite.patch"
          },
          "drupal/media_thumbnails": {
             "media_thumbnail.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/media_thumbnails_march_17_2025.patch"
