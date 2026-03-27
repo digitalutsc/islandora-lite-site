@@ -14,10 +14,10 @@ index d02c302..86a53de 100755
      "drupal/core": "<=8",
      "islandora/islandora_defaults": "<3"
 diff --git a/islandora_mirador.module b/islandora_mirador.module
-index c1a8bbe..ca18d40 100644
+index 4ace6f2..1cb16f8 100644
 --- a/islandora_mirador.module
 +++ b/islandora_mirador.module
-@@ -35,6 +35,19 @@ function islandora_mirador_theme() {
+@@ -31,6 +31,19 @@ function islandora_mirador_theme() {
  function template_preprocess_mirador(&$variables) {
    $variables['mirador_view_id'] = Html::getUniqueId($variables['mirador_view_id']);
  
@@ -52,10 +52,10 @@ index 9d27632..c377ef8 100644
 +  requirements: 
 +    _permission: 'access content'
 diff --git a/js/mirador_viewer.js b/js/mirador_viewer.js
-index c520e40..2f4f33d 100644
+index f47753b..4d5e741 100644
 --- a/js/mirador_viewer.js
 +++ b/js/mirador_viewer.js
-@@ -5,33 +5,96 @@
+@@ -5,38 +5,105 @@
   * Displays Mirador viewer.
   */
  (function (Drupal, once) {
@@ -71,11 +71,16 @@ index c520e40..2f4f33d 100644
 -            Drupal.IslandoraMirador.instances = Drupal.IslandoraMirador.instances || {}
 -            Object.entries(settings.mirador.viewers).forEach(entry => {
 -              const [base, values] = entry;
--              once('mirador-viewer', base, context).forEach(() =>
+-              once('mirador-viewer', base, context).forEach(() => {
+-                // Resolve 'system' theme to the OS preference at render time.
+-                const resolvedValues = Object.assign({}, values);
+-                if (resolvedValues.selectedTheme === 'system') {
+-                    resolvedValues.selectedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+-                }
 -                // save the mirador instance so other modules can interact
 -                // with the store/actions at e.g. Drupal.IslandoraMirador.instances["#mirador-xyz"].store
--                Drupal.IslandoraMirador.instances[base] = Mirador.viewer(values, window.miradorPlugins || {})
--              );
+-                Drupal.IslandoraMirador.instances[base] = Mirador.viewer(resolvedValues, window.miradorPlugins || {});
+-              });
 -            });
 -        },
 -        detach: function (context, settings) {
@@ -94,26 +99,32 @@ index c520e40..2f4f33d 100644
 +          Object.entries(settings.mirador.viewers).forEach(entry => {
 +            const [base, values] = entry;
 +            once('mirador-viewer', base, context, settings).forEach(() => {
++              // Resolve 'system' theme to the OS preference at render time.
++              const resolvedValues = Object.assign({}, values);
++              if (resolvedValues.selectedTheme === 'system') {
++                  resolvedValues.selectedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
++              }
++
 +              if (settings.token !== undefined) {
-+                values["resourceHeaders"] = {
++                resolvedValues["resourceHeaders"] = {
 +                  'Authorization': 'Bearer '+ settings.token,
 +                  'token': settings.token
 +                };
-+                values["requestPipeline"] = [
++                resolvedValues["requestPipeline"] = [
 +                  (url, options) => ({  ...options, headers: {
 +                    "Accept": 'application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"',
 +                    'Authorization': 'Bearer '+ settings.token,
 +                    'token': settings.token
 +                  }})
 +                ];
-+                values["osdConfig"] = {
++                resolvedValues["osdConfig"] = {
 +                  "loadTilesWithAjax": true,
 +                  "ajaxHeaders": {
 +                    'Authorization': 'Bearer '+ settings.token,
 +                    'token': settings.token
 +                  }
 +                };
-+                values["requests"] = {
++                resolvedValues["requests"] = {
 +                  preprocessors: [ // Functions that receive HTTP requests and manipulate them (e.g. to add headers)
 +                    // rewrite all info.json requests to add the text/json request header
 +                    (url, options) => (url.match('info.json') && { ...options, headers: {
@@ -123,7 +134,10 @@ index c520e40..2f4f33d 100644
 +                  ],
 +                };
                }
-+              Drupal.IslandoraMirador.instances[base] = Mirador.viewer(values, window.miradorPlugins || {})
++
++              // save the mirador instance so other modules can interact
++              // with the store/actions at e.g. Drupal.IslandoraMirador.instances["#mirador-xyz"].store
++              Drupal.IslandoraMirador.instances[base] = Mirador.viewer(resolvedValues, window.miradorPlugins || {});
              });
 -        }
 -    };
