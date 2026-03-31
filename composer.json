@@ -197,6 +197,7 @@
       "library/timeline3": "3.8.18",
       "library/jsoneditor": "6.0.0",
       "mjordan/islandora_workbench_integration": "1.2.0",
+      "vlucas/phpdotenv": "^5.5",        
       "wikimedia/composer-merge-plugin": "^2.0",
       "zaporylie/composer-drupal-optimizations": "^1.2",
       "digitalutsc/media_fits": "^1.0.0-beta",      
