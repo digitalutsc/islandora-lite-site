@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23f1798f24af41e74eb03ff2a6f824de",
+    "content-hash": "a069ee1cb756decff3515d5888d85fe6",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -8986,16 +8986,16 @@
         },
         {
             "name": "islandora_lite/ableplayer_extend",
-            "version": "1.0.0-beta4",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/ableplayer_extend.git",
-                "reference": "27b2731e219a3f907573de77939e3eae499e17b6"
+                "reference": "1ded9c91ae966e9ad9e4a0fa0e99d962d72ca3f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/ableplayer_extend/zipball/27b2731e219a3f907573de77939e3eae499e17b6",
-                "reference": "27b2731e219a3f907573de77939e3eae499e17b6",
+                "url": "https://api.github.com/repos/digitalutsc/ableplayer_extend/zipball/1ded9c91ae966e9ad9e4a0fa0e99d962d72ca3f5",
+                "reference": "1ded9c91ae966e9ad9e4a0fa0e99d962d72ca3f5",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -9005,7 +9005,7 @@
                 "issues": "https://github.com/digitalutsc/ableplayer_extend/issues",
                 "source": "https://github.com/digitalutsc/ableplayer_extend"
             },
-            "time": "2025-04-07T13:56:26+00:00"
+            "time": "2026-04-01T19:16:41+00:00"
         },
         {
             "name": "islandora_lite/facets_year_range",
@@ -9092,17 +9092,20 @@
         },
         {
             "name": "islandora_lite/islandora_object_thumbnail",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/islandora_object_thumbnail.git",
-                "reference": "0e0cfc754376627eaaddebbd48cc9f8cce919891"
+                "reference": "def427ac1bba20066ad2bd28acdec924558dd242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/islandora_object_thumbnail/zipball/0e0cfc754376627eaaddebbd48cc9f8cce919891",
-                "reference": "0e0cfc754376627eaaddebbd48cc9f8cce919891",
+                "url": "https://api.github.com/repos/digitalutsc/islandora_object_thumbnail/zipball/def427ac1bba20066ad2bd28acdec924558dd242",
+                "reference": "def427ac1bba20066ad2bd28acdec924558dd242",
                 "shasum": ""
+            },
+            "require": {
+                "drupal/search_api_solr": "^4.3"
             },
             "require-dev": {
                 "drupal/coder": "*",
@@ -9144,7 +9147,7 @@
                 "issues": "https://github.com/digitalutsc/islandora_object_thumbnail/issues",
                 "source": "https://github.com/digitalutsc/islandora_object_thumbnail"
             },
-            "time": "2026-03-26T12:46:32+00:00"
+            "time": "2026-04-01T19:14:58+00:00"
         },
         {
             "name": "islandora_lite/islandora_search_processor",
@@ -15416,7 +15419,6 @@
     "stability-flags": {
         "digitalutsc/private_files_adapter": 10,
         "drupal/advancedqueue": 5,
-        "drupal/advancedqueue_runner": 15,
         "drupal/archive_list_contents": 10,
         "drupal/config_update": 15,
         "drupal/context": 5,
@@ -15425,7 +15427,6 @@
         "drupal/media_thumbnails_pdf": 10,
         "drupal/media_thumbnails_tiff": 10,
         "drupal/replaywebpage": 10,
-        "drupal/rest_oai_pmh": 10,
         "drupal/search_api_location": 15,
         "drupal/views_field_view": 10
     },
