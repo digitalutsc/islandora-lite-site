@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a069ee1cb756decff3515d5888d85fe6",
+    "content-hash": "2bd26085c818f245fac90a13731d010b",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -279,16 +279,16 @@
         },
         {
             "name": "citation-style-language/locales",
-            "version": "v0.0.88",
+            "version": "v0.0.90",
             "source": {
                 "type": "git",
                 "url": "https://github.com/citation-style-language/locales.git",
-                "reference": "8f0c2501b01115318dad226b6cf94a6f8d7a9d38"
+                "reference": "938c09c164a60b3cfeabe61089f1bf4c3ea6a4ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/citation-style-language/locales/zipball/8f0c2501b01115318dad226b6cf94a6f8d7a9d38",
-                "reference": "8f0c2501b01115318dad226b6cf94a6f8d7a9d38",
+                "url": "https://api.github.com/repos/citation-style-language/locales/zipball/938c09c164a60b3cfeabe61089f1bf4c3ea6a4ed",
+                "reference": "938c09c164a60b3cfeabe61089f1bf4c3ea6a4ed",
                 "shasum": ""
             },
             "type": "library",
@@ -311,7 +311,7 @@
             "homepage": "http://citationstyles.org/",
             "support": {
                 "issues": "https://github.com/citation-style-language/locales/issues",
-                "source": "https://github.com/citation-style-language/locales/tree/v0.0.88"
+                "source": "https://github.com/citation-style-language/locales/tree/v0.0.90"
             },
             "funding": [
                 {
@@ -319,7 +319,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-09T21:46:34+00:00"
+            "time": "2026-03-30T23:38:18+00:00"
         },
         {
             "name": "citation-style-language/styles",
@@ -2033,17 +2033,17 @@
         },
         {
             "name": "drupal/ableplayer",
-            "version": "3.4.1",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ableplayer.git",
-                "reference": "3.4.1"
+                "reference": "3.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ableplayer-3.4.1.zip",
-                "reference": "3.4.1",
-                "shasum": "ef3ce6cdebad3d92aed4805f3bdc5b2578610bbd"
+                "url": "https://ftp.drupal.org/files/projects/ableplayer-3.4.2.zip",
+                "reference": "3.4.2",
+                "shasum": "a37c43bc56a044132b66150ef35b9fa3a0d99ae9"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -2051,8 +2051,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.4.1",
-                    "datestamp": "1773686576",
+                    "version": "3.4.2",
+                    "datestamp": "1774882888",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8267,16 +8267,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v7.0.4",
+            "version": "v7.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "e41f1bd7dbe3c5455c3f72d4338cfeb083b71931"
+                "reference": "47ad26bab5e7c70ae8a6f08ed25ff83631121380"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/e41f1bd7dbe3c5455c3f72d4338cfeb083b71931",
-                "reference": "e41f1bd7dbe3c5455c3f72d4338cfeb083b71931",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/47ad26bab5e7c70ae8a6f08ed25ff83631121380",
+                "reference": "47ad26bab5e7c70ae8a6f08ed25ff83631121380",
                 "shasum": ""
             },
             "require": {
@@ -8325,9 +8325,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v7.0.4"
+                "source": "https://github.com/firebase/php-jwt/tree/v7.0.5"
             },
-            "time": "2026-03-27T21:17:19+00:00"
+            "time": "2026-04-01T20:38:03+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -9227,16 +9227,16 @@
         },
         {
             "name": "itamair/geophp",
-            "version": "1.11",
+            "version": "1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itamair/geoPHP.git",
-                "reference": "592b4eba8d4bc700561f67667d0fab1f5bac3eaf"
+                "reference": "e0f87ad0e45f3898892a8f3bc02e8717c01554fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itamair/geoPHP/zipball/592b4eba8d4bc700561f67667d0fab1f5bac3eaf",
-                "reference": "592b4eba8d4bc700561f67667d0fab1f5bac3eaf",
+                "url": "https://api.github.com/repos/itamair/geoPHP/zipball/e0f87ad0e45f3898892a8f3bc02e8717c01554fb",
+                "reference": "e0f87ad0e45f3898892a8f3bc02e8717c01554fb",
                 "shasum": ""
             },
             "require-dev": {
@@ -9268,9 +9268,9 @@
             "homepage": "https://github.com/itamair/geoPHP",
             "support": {
                 "issues": "https://github.com/itamair/geoPHP/issues",
-                "source": "https://github.com/itamair/geoPHP/tree/1.11"
+                "source": "https://github.com/itamair/geoPHP/tree/1.12"
             },
-            "time": "2026-04-01T15:21:35+00:00"
+            "time": "2026-04-02T10:02:52+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
@@ -10205,16 +10205,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.11.3",
+            "version": "3.11.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "6a7e652845bb018c668220c2a545aded8594fbbf"
+                "reference": "e890471a3494740f7d9326d72ce6a8c559ffee60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/6a7e652845bb018c668220c2a545aded8594fbbf",
-                "reference": "6a7e652845bb018c668220c2a545aded8594fbbf",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/e890471a3494740f7d9326d72ce6a8c559ffee60",
+                "reference": "e890471a3494740f7d9326d72ce6a8c559ffee60",
                 "shasum": ""
             },
             "require": {
@@ -10306,7 +10306,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-11T17:23:39+00:00"
+            "time": "2026-04-07T09:57:54+00:00"
         },
         {
             "name": "nikic/php-parser",
