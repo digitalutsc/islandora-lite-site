@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6863f7024e21dd3258f3c08269a1405b",
+    "content-hash": "330ed6923c93509459a757173bad32de",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -1332,16 +1332,16 @@
         },
         {
             "name": "digitalutsc/group_solr",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/group_solr.git",
-                "reference": "9b58df6468f4c881c5070f9b3dabe34ca3141c19"
+                "reference": "8fd42c57a3fab2e3b21a4cc29154126b02b05bdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/group_solr/zipball/9b58df6468f4c881c5070f9b3dabe34ca3141c19",
-                "reference": "9b58df6468f4c881c5070f9b3dabe34ca3141c19",
+                "url": "https://api.github.com/repos/digitalutsc/group_solr/zipball/8fd42c57a3fab2e3b21a4cc29154126b02b05bdd",
+                "reference": "8fd42c57a3fab2e3b21a4cc29154126b02b05bdd",
                 "shasum": ""
             },
             "require": {
@@ -1372,7 +1372,7 @@
                 "issues": "https://github.com/digitalutsc/group_solr/issues",
                 "source": "https://github.com/digitalutsc/group_solr"
             },
-            "time": "2026-04-07T21:27:31+00:00"
+            "time": "2026-04-14T21:26:00+00:00"
         },
         {
             "name": "digitalutsc/islandora_group",
@@ -1419,16 +1419,16 @@
         },
         {
             "name": "digitalutsc/media_fits",
-            "version": "1.0.0-beta7",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/media_fits.git",
-                "reference": "f3cbb529e9a0e1f2df79b8e62c5e49724dbeb0ab"
+                "reference": "4e69088dc00e8f0b012bd213c32e2c66fd125275"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/f3cbb529e9a0e1f2df79b8e62c5e49724dbeb0ab",
-                "reference": "f3cbb529e9a0e1f2df79b8e62c5e49724dbeb0ab",
+                "url": "https://api.github.com/repos/digitalutsc/media_fits/zipball/4e69088dc00e8f0b012bd213c32e2c66fd125275",
+                "reference": "4e69088dc00e8f0b012bd213c32e2c66fd125275",
                 "shasum": ""
             },
             "require": {
@@ -1483,20 +1483,20 @@
                 "issues": "https://www.drupal.org/project/issues/media_fits",
                 "source": "https://git.drupalcode.org/project/media_fits"
             },
-            "time": "2025-04-11T18:48:11+00:00"
+            "time": "2026-04-14T20:53:30+00:00"
         },
         {
             "name": "digitalutsc/private_files_adapter",
-            "version": "1.0.0-beta5",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/private_files_adapter.git",
-                "reference": "94532f79747dc4e79bd5f4243fac70a91a434a99"
+                "reference": "3888a1b1ea87f4db0687b5e3d32a5156d16485da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/private_files_adapter/zipball/94532f79747dc4e79bd5f4243fac70a91a434a99",
-                "reference": "94532f79747dc4e79bd5f4243fac70a91a434a99",
+                "url": "https://api.github.com/repos/digitalutsc/private_files_adapter/zipball/3888a1b1ea87f4db0687b5e3d32a5156d16485da",
+                "reference": "3888a1b1ea87f4db0687b5e3d32a5156d16485da",
                 "shasum": ""
             },
             "require": {
@@ -1527,7 +1527,7 @@
                 "issues": "https://www.drupal.org/project/issues/private_files_adapter",
                 "source": "http://cgit.drupalcode.org/private_files_adapter"
             },
-            "time": "2024-02-14T01:43:45+00:00"
+            "time": "2026-04-07T15:41:32+00:00"
         },
         {
             "name": "discoverygarden/dgi_fixity",
@@ -2487,26 +2487,26 @@
         },
         {
             "name": "drupal/archive_list_contents",
-            "version": "1.0.0-beta3",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/archive_list_contents.git",
-                "reference": "1.0.0-beta3"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/archive_list_contents-1.0.0-beta3.zip",
-                "reference": "1.0.0-beta3",
-                "shasum": "a8c299b97b9fc5e15db3e40efc5d3865ea2c4b50"
+                "url": "https://ftp.drupal.org/files/projects/archive_list_contents-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "68a43e75bd95375e40883cfd50a23336cda271a6"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta3",
-                    "datestamp": "1696955256",
+                    "version": "2.0.0",
+                    "datestamp": "1776347315",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2531,12 +2531,15 @@
                     "homepage": "https://www.drupal.org/user/3688342"
                 },
                 {
-                    "name": "Natkeeran",
+                    "name": "natkeeran",
                     "homepage": "https://www.drupal.org/user/1016288"
                 }
             ],
             "description": "Field formatter that displays the contents of archive files in a list.",
             "homepage": "https://www.drupal.org/project/archive_list_contents",
+            "keywords": [
+                "Drupal"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/archive_list_contents"
             }
@@ -3085,16 +3088,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "10.6.6",
+            "version": "10.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "b20827f9bc8d9fa05019796c7e6ee9c419e25ba9"
+                "reference": "d6e217d684894e5a0e6fb28261184dd57450bedb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/b20827f9bc8d9fa05019796c7e6ee9c419e25ba9",
-                "reference": "b20827f9bc8d9fa05019796c7e6ee9c419e25ba9",
+                "url": "https://api.github.com/repos/drupal/core/zipball/d6e217d684894e5a0e6fb28261184dd57450bedb",
+                "reference": "d6e217d684894e5a0e6fb28261184dd57450bedb",
                 "shasum": ""
             },
             "require": {
@@ -3244,13 +3247,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/10.6.6"
+                "source": "https://github.com/drupal/core/tree/10.6.7"
             },
-            "time": "2026-04-08T09:27:49+00:00"
+            "time": "2026-04-15T16:19:28+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "10.6.6",
+            "version": "10.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -3294,22 +3297,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/10.6.6"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/10.6.7"
             },
             "time": "2024-08-22T14:31:30+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "10.6.6",
+            "version": "10.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "4e0bcb3040f69f47d2a67a604a7a0e7956073269"
+                "reference": "617efa3bd4c20d48b2f0189489a42d06138f1086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/4e0bcb3040f69f47d2a67a604a7a0e7956073269",
-                "reference": "4e0bcb3040f69f47d2a67a604a7a0e7956073269",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/617efa3bd4c20d48b2f0189489a42d06138f1086",
+                "reference": "617efa3bd4c20d48b2f0189489a42d06138f1086",
                 "shasum": ""
             },
             "require": {
@@ -3317,7 +3320,7 @@
                 "composer/semver": "~3.4.4",
                 "doctrine/deprecations": "~1.1.5",
                 "doctrine/lexer": "~2.1.1",
-                "drupal/core": "10.6.6",
+                "drupal/core": "10.6.7",
                 "egulias/email-validator": "~4.0.4",
                 "guzzlehttp/guzzle": "~7.10.0",
                 "guzzlehttp/promises": "~2.3.0",
@@ -3377,9 +3380,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/10.6.6"
+                "source": "https://github.com/drupal/core-recommended/tree/10.6.7"
             },
-            "time": "2026-04-08T09:27:49+00:00"
+            "time": "2026-04-15T16:19:28+00:00"
         },
         {
             "name": "drupal/csv_serialization",
@@ -9046,16 +9049,16 @@
         },
         {
             "name": "islandora_lite/islandora_breadcrumbs",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalutsc/islandora_breadcrumbs.git",
-                "reference": "288b98ffe6e2eb808677ad8697d0a29dcf75747a"
+                "reference": "9fba52310af910f85603cf6c482f44fd63b2a323"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalutsc/islandora_breadcrumbs/zipball/288b98ffe6e2eb808677ad8697d0a29dcf75747a",
-                "reference": "288b98ffe6e2eb808677ad8697d0a29dcf75747a",
+                "url": "https://api.github.com/repos/digitalutsc/islandora_breadcrumbs/zipball/9fba52310af910f85603cf6c482f44fd63b2a323",
+                "reference": "9fba52310af910f85603cf6c482f44fd63b2a323",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -9064,10 +9067,10 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/digitalutsc/islandora_breadcrumbs/tree/1.0.0",
+                "source": "https://github.com/digitalutsc/islandora_breadcrumbs/tree/1.0.1",
                 "issues": "https://github.com/digitalutsc/islandora_breadcrumbs/issues"
             },
-            "time": "2026-03-31T19:45:10+00:00"
+            "time": "2026-04-14T21:20:54+00:00"
         },
         {
             "name": "islandora_lite/islandora_iiif_hocr_extend",
@@ -13828,7 +13831,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.34.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -13888,7 +13891,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -13912,7 +13915,7 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.34.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
@@ -13968,7 +13971,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -15424,16 +15427,10 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "digitalutsc/private_files_adapter": 10,
         "drupal/advancedqueue": 5,
-        "drupal/archive_list_contents": 10,
         "drupal/config_update": 15,
         "drupal/context": 5,
         "drupal/json_field_processor": 20,
-        "drupal/media_thumbnails_jp2": 10,
-        "drupal/media_thumbnails_pdf": 10,
-        "drupal/media_thumbnails_tiff": 10,
-        "drupal/replaywebpage": 10,
         "drupal/search_api_location": 15,
         "drupal/views_field_view": 10
     },
