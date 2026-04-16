@@ -200,7 +200,7 @@
       "vlucas/phpdotenv": "^2.4",        
       "wikimedia/composer-merge-plugin": "^2.0",
       "zaporylie/composer-drupal-optimizations": "^1.2",
-      "digitalutsc/media_fits": "^1.0.0-beta",      
+      "digitalutsc/media_fits": "^1.0",      
       "drupal/imagemagick": "^4.0",
       "islandora_lite/islandora_iiif_hocr_extend": "^1.0", 
       "drupal/group" :"3.3.5"
