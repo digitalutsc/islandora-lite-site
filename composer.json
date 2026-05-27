@@ -1,7 +1,7 @@
 {
    "name": "islandora/islandora-sandbox",
    "description": "Project template for Drupal 8 projects with composer",
-   "_version": "2.2.0",
+   "version": "2.2.0",
    "type": "project",
    "license": "GPL-2.0-or-later",
    "authors": [
@@ -207,7 +207,6 @@
       "drupal/group" :"3.3.5"
    },
    "require-dev": {
-      "drupal/devel": "^5.0",
       "phpunit/phpunit": "^9.6"
    },
    "conflict": {
@@ -219,7 +218,12 @@
    "config": {
       "audit": {
          "ignore": {
-            "PKSA-dwsq-ppd2-mb1x": "*"
+            "PKSA-dwsq-ppd2-mb1x": "*",
+            "PKSA-fbvq-z33h-r2np": "*",
+            "PKSA-g9zw-qxh8-pq8w": "*",
+            "PKSA-yd6k-t2gh-1m43": "*",
+            "PKSA-1tmc-rt7x-12w6": "*",
+            "PKSA-xx6c-6d96-db2w": "*"
          }
       },
       "discard-changes": true,
