@@ -121,7 +121,7 @@
       "php": "^7.4 || ^8",
       "born-digital/islandora_iiif_hocr": "2.0.7",
       "composer/installers": "^2.0",
-      "cweagans/composer-patches": "^1.9",
+      "cweagans/composer-patches": "^1.9@dev",
       "digitalutsc/group_solr": "^1.0",
       "digitalutsc/islandora_group": "^2.0",
       "digitalutsc/private_files_adapter": "^1.0",
@@ -138,9 +138,10 @@
       "drupal/citation_select": "^2.0",
       "drupal/config_update": "^2.0@alpha",
       "drupal/context": "^5@RC",
+      "drupal/context_ui": "^5@RC",
       "drupal/controlled_access_terms": "^2",
       "drupal/core-composer-scaffold": "^10.2",
-      "drupal/core-recommended": "^10.6",
+      "drupal/core-recommended": "10.6.9",
       "drupal/csvfile_formatter": "^1.0",
       "drupal/devel": "^5.0",
       "drupal/facets": "2.0.10",
@@ -179,7 +180,7 @@
       "drupal/views_bulk_edit": "^3.0",
       "drupal/views_bulk_operations": "~4.2.4",
       "drupal/views_data_export": "^1.9",
-      "drupal/views_field_view": "^1.0@beta",
+      "drupal/views_field_view": "^1.0",
       "drupal/views_flipped_table": "2.0.3",
       "drupal/views_timelinejs": "^4.0",
       "drush/drush": "^12",
@@ -206,15 +207,21 @@
       "drupal/group" :"3.3.5"
    },
    "require-dev": {
-      "drupal/devel": "^5.0"
+      "drupal/devel": "^5.0",
+      "phpunit/phpunit": "^9.6"
    },
    "conflict": {
       "drupal/drupal": "*",
       "drupal/core": "<=8"
    },
-   "minimum-stability": "dev",
+   "minimum-stability": "stable",
    "prefer-stable": true,
    "config": {
+      "audit": {
+         "ignore": {
+            "PKSA-dwsq-ppd2-mb1x": "*"
+         }
+      },
       "discard-changes": true,
       "sort-packages": true,
       "preferred-install": "dist",
