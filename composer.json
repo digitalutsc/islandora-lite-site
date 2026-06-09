@@ -1,7 +1,7 @@
 {
    "name": "islandora/islandora-sandbox",
    "description": "Project template for Drupal 8 projects with composer",
-   "version": "2.2.0",
+   "version": "2.2.1",
    "type": "project",
    "license": "GPL-2.0-or-later",
    "authors": [
@@ -141,9 +141,9 @@
       "drupal/context_ui": "^5@RC",
       "drupal/controlled_access_terms": "^2",
       "drupal/core-composer-scaffold": "^10.2",
-      "drupal/core-recommended": "10.6.9",
+      "drupal/core-recommended": "^10.6",
       "drupal/csvfile_formatter": "^1.0",
-      "drupal/devel": "^5.0",
+      "drupal/devel": "^5.4",
       "drupal/facets": "2.0.10",
       "drupal/field_group": "^3.4",
       "drupal/field_permissions": "^1.2",
@@ -166,7 +166,7 @@
       "drupal/media_thumbnails_video": "^2.0",
       "drupal/migrate_plus": "^6.0",
       "drupal/migrate_source_csv": "^3.5",
-      "drupal/openseadragon": "^2.1",
+      "drupal/openseadragon": "^3.0",
       "drupal/pathauto": "^1.12",
       "drupal/pdf": "^1.2",
       "drupal/replaywebpage": "^1.0",
@@ -178,7 +178,7 @@
       "drupal/term_condition": "^2.0",
       "drupal/triplestore_indexer": "^2.1",
       "drupal/views_bulk_edit": "^3.0",
-      "drupal/views_bulk_operations": "~4.2.4",
+      "drupal/views_bulk_operations": "^4.4",
       "drupal/views_data_export": "^1.9",
       "drupal/views_field_view": "^1.0",
       "drupal/views_flipped_table": "2.0.3",
@@ -217,14 +217,7 @@
    "prefer-stable": true,
    "config": {
       "audit": {
-         "ignore": {
-            "PKSA-dwsq-ppd2-mb1x": "*",
-            "PKSA-fbvq-z33h-r2np": "*",
-            "PKSA-g9zw-qxh8-pq8w": "*",
-            "PKSA-yd6k-t2gh-1m43": "*",
-            "PKSA-1tmc-rt7x-12w6": "*",
-            "PKSA-xx6c-6d96-db2w": "*"
-         }
+         "ignore": {}
       },
       "discard-changes": true,
       "sort-packages": true,
