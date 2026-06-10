@@ -1,7 +1,7 @@
 {
    "name": "islandora/islandora-sandbox",
    "description": "Project template for Drupal 8 projects with composer",
-   "version": "2.2.1",
+   "version": "2.2.2",
    "type": "project",
    "license": "GPL-2.0-or-later",
    "authors": [
@@ -145,7 +145,7 @@
       "drupal/csvfile_formatter": "^1.0",
       "drupal/devel": "^5.4",
       "drupal/facets": "2.0.10",
-      "drupal/field_group": "^3.4",
+      "drupal/field_group": "^4.0",
       "drupal/field_permissions": "^1.2",
       "drupal/filemime": "^1.11",
       "drupal/filter_perms": "^2.0",

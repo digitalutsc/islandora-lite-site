@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abd054d62c641742e17ec33baf1a6be5",
+    "content-hash": "4c64c8da6d8400923adeb2bbfc30fcba",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -1532,16 +1532,16 @@
         },
         {
             "name": "discoverygarden/dgi_fixity",
-            "version": "v1.4.5",
+            "version": "v1.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/discoverygarden/dgi_fixity.git",
-                "reference": "c9eda1d36f3c74dcd7251d6fb1630bcb9cd7c6f7"
+                "reference": "51f481068d25222373a4ccadab625d0dee9725b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/discoverygarden/dgi_fixity/zipball/c9eda1d36f3c74dcd7251d6fb1630bcb9cd7c6f7",
-                "reference": "c9eda1d36f3c74dcd7251d6fb1630bcb9cd7c6f7",
+                "url": "https://api.github.com/repos/discoverygarden/dgi_fixity/zipball/51f481068d25222373a4ccadab625d0dee9725b7",
+                "reference": "51f481068d25222373a4ccadab625d0dee9725b7",
                 "shasum": ""
             },
             "require": {
@@ -1554,9 +1554,9 @@
             ],
             "support": {
                 "issues": "https://github.com/discoverygarden/dgi_fixity/issues",
-                "source": "https://github.com/discoverygarden/dgi_fixity/tree/v1.4.5"
+                "source": "https://github.com/discoverygarden/dgi_fixity/tree/v1.4.6"
             },
-            "time": "2026-06-05T19:38:28+00:00"
+            "time": "2026-06-10T14:37:35+00:00"
         },
         {
             "name": "discoverygarden/islandora_hocr",
@@ -3914,20 +3914,20 @@
         },
         {
             "name": "drupal/field_group",
-            "version": "3.6.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "8.x-3.6"
+                "reference": "4.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.6.zip",
-                "reference": "8.x-3.6",
-                "shasum": "427c0a65dc1936e69e60c120776056cfe5b43e86"
+                "url": "https://ftp.drupal.org/files/projects/field_group-4.0.0.zip",
+                "reference": "4.0.0",
+                "shasum": "d3ff81d8a64b6ac392989b668cfa417be5101642"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10 || ^11"
+                "drupal/core": "^10.3 || ^11"
             },
             "require-dev": {
                 "drupal/jquery_ui_accordion": "*"
@@ -3935,8 +3935,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.6",
-                    "datestamp": "1722672510",
+                    "version": "4.0.0",
+                    "datestamp": "1745478894",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
