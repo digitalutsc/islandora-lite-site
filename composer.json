@@ -129,7 +129,7 @@
       "discoverygarden/islandora_hocr": "v1.4.1",
       "drupal/ableplayer": "3.4.2",
       "drupal/admin_toolbar": "^3.1",
-      "drupal/advanced_search": "^2.2",
+      "drupal/advanced_search": "2.4.2",
       "drupal/advancedqueue": "^1.0@RC",
       "drupal/advancedqueue_runner": "^2.0",
       "drupal/archive_list_contents": "^2.0",
@@ -330,6 +330,9 @@
          },
          "drupal/group": {
             "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/view_batch_export_issue.patch"
+         },
+         "drupal/advanced_search": {
+            "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/advanced_search_issue_96.patch"
          }
       },
       "merge-plugin": {
