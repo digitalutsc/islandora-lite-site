@@ -1,0 +1,122 @@
+From 0eba065d4755c6280d3c75a775704fe16dc564ce Mon Sep 17 00:00:00 2001
+From: Kyle Huynh <7862086+kylehuynh205@users.noreply.github.com>
+Date: Wed, 10 Jun 2026 15:18:57 -0400
+Subject: [PATCH 1/4] Fix URL parameter handling for pagination links
+
+---
+ js/facets/facets-views-ajax.js | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/js/facets/facets-views-ajax.js b/js/facets/facets-views-ajax.js
+index ea93823..fb052a1 100644
+--- a/js/facets/facets-views-ajax.js
++++ b/js/facets/facets-views-ajax.js
+@@ -85,7 +85,10 @@
+       // append items_per_page
+       $("a.pager__itemsperpage").each(function( index ) {
+         var newUrl = url + "&items_per_page=" + $(this).attr('itemsperpage');
+-        $(this).attr("href", newUrl);
++        if (url.indexOf('?') === -1)  {
++           newUrl = url + "?&items_per_page=" + $(this).attr('itemsperpage'); //"?&display=" + $(this).attr('type');
++        }
++	      $(this).attr("href", newUrl);
+       });
+     } 
+     else { 
+@@ -119,7 +122,10 @@
+       // append items_per_page
+       $("a.pager__display").each(function( index ) {
+         var newUrl = url + "&display=" + $(this).attr('type');
+-        $(this).attr("href", newUrl);
++      	if (url.indexOf('?') === -1)  {
++           newUrl = url + "?&display=" + $(this).attr('type');
++        }
++      	$(this).attr("href", newUrl);
+       });
+       
+     } 
+
+From d5475100dbece9e4712179e3bd7ead49983dc397 Mon Sep 17 00:00:00 2001
+From: Kyle Huynh <7862086+kylehuynh205@users.noreply.github.com>
+Date: Wed, 10 Jun 2026 15:43:02 -0400
+Subject: [PATCH 2/4] Fix URL parameter formatting for items per page
+
+---
+ js/facets/facets-views-ajax.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/js/facets/facets-views-ajax.js b/js/facets/facets-views-ajax.js
+index fb052a1..426c819 100644
+--- a/js/facets/facets-views-ajax.js
++++ b/js/facets/facets-views-ajax.js
+@@ -86,7 +86,7 @@
+       $("a.pager__itemsperpage").each(function( index ) {
+         var newUrl = url + "&items_per_page=" + $(this).attr('itemsperpage');
+         if (url.indexOf('?') === -1)  {
+-           newUrl = url + "?&items_per_page=" + $(this).attr('itemsperpage'); //"?&display=" + $(this).attr('type');
++           newUrl = url + "?items_per_page=" + $(this).attr('itemsperpage');
+         }
+ 	      $(this).attr("href", newUrl);
+       });
+@@ -123,7 +123,7 @@
+       $("a.pager__display").each(function( index ) {
+         var newUrl = url + "&display=" + $(this).attr('type');
+       	if (url.indexOf('?') === -1)  {
+-           newUrl = url + "?&display=" + $(this).attr('type');
++           newUrl = url + "?display=" + $(this).attr('type');
+         }
+       	$(this).attr("href", newUrl);
+       });
+
+From cc3f4d3e606fd7029fe1396d835a5d17967a8956 Mon Sep 17 00:00:00 2001
+From: Kyle Huynh <7862086+kylehuynh205@users.noreply.github.com>
+Date: Wed, 10 Jun 2026 15:47:46 -0400
+Subject: [PATCH 3/4] Remove the space indentation
+
+---
+ js/facets/facets-views-ajax.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/js/facets/facets-views-ajax.js b/js/facets/facets-views-ajax.js
+index 426c819..6d6cc5e 100644
+--- a/js/facets/facets-views-ajax.js
++++ b/js/facets/facets-views-ajax.js
+@@ -88,7 +88,7 @@
+         if (url.indexOf('?') === -1)  {
+            newUrl = url + "?items_per_page=" + $(this).attr('itemsperpage');
+         }
+-	      $(this).attr("href", newUrl);
++	    $(this).attr("href", newUrl);
+       });
+     } 
+     else { 
+
+From f0254d95e4c74bca6f844dc1396cfb152a3ffb74 Mon Sep 17 00:00:00 2001
+From: Kyle Huynh <7862086+kylehuynh205@users.noreply.github.com>
+Date: Thu, 11 Jun 2026 13:57:51 -0400
+Subject: [PATCH 4/4] Reset URL on reset button click
+
+Reset the URL after the reset button is clicked to address issue #95.
+---
+ js/advanced_search.form.js | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/js/advanced_search.form.js b/js/advanced_search.form.js
+index ecd1be2..72fc967 100644
+--- a/js/advanced_search.form.js
++++ b/js/advanced_search.form.js
+@@ -177,6 +177,14 @@
+           let resetTriggered = false;
+           $form.find('input[data-drupal-selector = "edit-reset"]').mousedown(function (e) {
+             resetTriggered = true;
++            
++            // Put back because issue https://github.com/Islandora/advanced_search/issues/95
++            const inputs = [];
++            const href = url(inputs, settings.advanced_search_form);
++            window.history.pushState(null, document.title, href.split('?')[0] );
++
++            /* reset the url after reset button clicked */
++            window.location.replace(href.split('?')[0]);
+           });
+ 
+           // Handle the page summary
