@@ -1,7 +1,7 @@
 {
    "name": "islandora/islandora-sandbox",
    "description": "Project template for Drupal 8 projects with composer",
-   "version": "2.2.3",
+   "version": "2.2.4",
    "type": "project",
    "license": "GPL-2.0-or-later",
    "authors": [
@@ -333,6 +333,9 @@
          },
          "drupal/advanced_search": {
             "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/advanced_search_issue_96.patch"
+         },
+         "drupal/controlled_access_terms": {
+            "controlled_access_term_reversed_typerelation.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/controlled_access_term_reversed_typerelation.patch"
          }
       },
       "merge-plugin": {
