@@ -332,7 +332,7 @@
             "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/view_batch_export_issue.patch"
          },
          "drupal/advanced_search": {
-            "group.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/advanced_search_issue_96.patch"
+            "advanced_search_issue_96.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/advanced_search_issue_96.patch"
          },
          "drupal/controlled_access_terms": {
             "controlled_access_term_reversed_typerelation.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/controlled_access_term_reversed_typerelation.patch"
