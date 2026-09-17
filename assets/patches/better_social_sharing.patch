@@ -35,6 +35,7 @@ index e1e58ac..47e90f4 100644
 +    if ($config->get('preferred_url')) {
 +      if ($node instanceof NodeInterface) {
 +        $preferred = $config->get('preferred_url');
++        /* If preferred URL exists, access it */
 +        if ($node->hasField($preferred)) {
 +          $field_type = $node->get($preferred)->getFieldDefinition()->getType();
 +          if($field_type === "link"){
