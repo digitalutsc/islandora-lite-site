@@ -35,11 +35,13 @@ index e1e58ac..47e90f4 100644
 +    if ($config->get('preferred_url')) {
 +      if ($node instanceof NodeInterface) {
 +        $preferred = $config->get('preferred_url');
-+        $field_type = $node->get($preferred)->getFieldDefinition()->getType();
-+        if($field_type === "link"){
-+          $temp = $node->get($preferred)->first();
-+          if(!is_null($temp)){
-+            $url = $temp->getUrl()->toString();
++        if ($node->hasField($preferred)) {
++          $field_type = $node->get($preferred)->getFieldDefinition()->getType();
++          if($field_type === "link"){
++            $temp = $node->get($preferred)->first();
++            if(!is_null($temp)){
++              $url = $temp->getUrl()->toString();
++            }
 +          }
 +        }
 +        
