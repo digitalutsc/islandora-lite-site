@@ -1,0 +1,70 @@
+diff --git a/config/schema/better_social_sharing_buttons.schema.yml b/config/schema/better_social_sharing_buttons.schema.yml
+index 8d8b71e..4c27656 100644
+--- a/config/schema/better_social_sharing_buttons.schema.yml
++++ b/config/schema/better_social_sharing_buttons.schema.yml
+@@ -35,6 +35,9 @@ better_social_sharing_buttons.settings:
+     paragraph_field:
+       type: boolean
+       label: 'Enable field for paragraphs'
++    preferred_url:
++      type: string
++      label: 'Link field to share instead of the node URL'
+ 
+ block.settings.social_sharing_buttons_block:
+   type: block_settings
+diff --git a/src/Form/BetterSocialSharingButtonsForm.php b/src/Form/BetterSocialSharingButtonsForm.php
+index facf94b..2803ea0 100644
+--- a/src/Form/BetterSocialSharingButtonsForm.php
++++ b/src/Form/BetterSocialSharingButtonsForm.php
+@@ -190,6 +190,14 @@ class BetterSocialSharingButtonsForm extends ConfigFormBase {
+       '#default_value' => $config->get('node_field') ?: FALSE,
+     ];
+ 
++    $form['use_url_field'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Url Field to use'),
++      '#default_value' => $config->get('preferred_url') ?: '',
++      '#description' => $this->t('Machine name of a link field on the node to share instead of the node URL.'),
++      '#required' => FALSE,
++    ];
++
+     $form['paragraph_field'] = [
+       '#title' => $this->t('Enable Better Social Sharing Buttons display field for paragraphs'),
+       '#description' => $this->t('Clear cache after enabling this option to see the field available on paragraph types.'),
+@@ -232,6 +240,7 @@ class BetterSocialSharingButtonsForm extends ConfigFormBase {
+     $config->set('iconset', $form_state->getValue('iconset'));
+     $config->set('node_field', $form_state->getValue('node_field'));
+     $config->set('paragraph_field', $form_state->getValue('paragraph_field'));
++    $config->set('preferred_url', $form_state->getValue('use_url_field'));
+     $config->save();
+     $this->messenger()->addMessage($this->t("Configuration saved!"));
+   }
+diff --git a/src/Hook/BetterSocialSharingButtonsHooks.php b/src/Hook/BetterSocialSharingButtonsHooks.php
+index 6ab1803..c4c679f 100644
+--- a/src/Hook/BetterSocialSharingButtonsHooks.php
++++ b/src/Hook/BetterSocialSharingButtonsHooks.php
+@@ -8,6 +8,7 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+ use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\Hook\Attribute\Hook;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\node\NodeInterface;
+ 
+ /**
+  * Hook implementations for better_social_sharing_buttons.
+@@ -79,6 +80,16 @@ class BetterSocialSharingButtonsHooks {
+   public static function preprocessBetterSocialSharingButtons(&$variables): void {
+     $icon_set = $variables['items']['iconset'] ?? \Drupal::config('better_social_sharing_buttons.settings')->get('iconset');
+     $variables['social_buttons_sprite'] = Url::fromUri('internal:/' . \Drupal::service('extension.list.module')->getPath('better_social_sharing_buttons') . '/assets/dist/sprites/' . $icon_set . '.svg')->toString();
++
++    // Share the URL stored in a configured link field instead of the node URL.
++    $preferred = \Drupal::config('better_social_sharing_buttons.settings')->get('preferred_url');
++    $node = \Drupal::routeMatch()->getParameter('node');
++    if ($preferred && $node instanceof NodeInterface && $node->hasField($preferred)
++      && $node->get($preferred)->getFieldDefinition()->getType() === 'link'
++      && ($link = $node->get($preferred)->first())) {
++      $variables['items']['page_url'] = $link->getUrl()->setAbsolute()->toString();
++      $variables['#cache']['max-age'] = 0;
++    }
+   }
+ 
+   /**

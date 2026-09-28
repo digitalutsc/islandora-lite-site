@@ -1,0 +1,157 @@
+{
+    "name": "islandora_lite/dsu_site",
+    "description": "",
+    "version": "2.2.3",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": "Owner",
+            "email": ""
+        }
+    ],
+    "repositories": [
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/serve_iiif_file"
+       },   
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/jsonld_markup"
+       },
+       {
+         "type": "package",
+         "package": {
+            "name": "library/jquery-jsonview",
+            "version": "1.2.3",
+            "type": "drupal-library",
+            "dist": {
+               "url": "https://github.com/yesmeck/jquery-jsonview/archive/refs/tags/v1.2.3.zip",
+               "type": "zip"
+            }
+         }
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/islandora_site_name"
+       },
+      {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/relation_extend"
+      },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/group_concat"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/advanced_search_default_sort_override"
+       },
+       {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/xmlsitemap_extend"
+       },
+       {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/leafletjs"
+       },
+       {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/temporary_downloadable_media"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/assign_calc"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/rest_translation_util"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/language_switcher_popup"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/static_metadata_records"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/selective_revisions"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/media_file_relocate"
+       }           
+    ],
+    "require": {
+        "drupal/bootstrap_barrio": "^5.5.20",
+        "digitalutsc/drupal_hero_banner": "^1.0",
+        "drupal/drupal_libcal": "^1.0.2",
+        "drupal/google_analytics": "^4.0.3",
+        "drupal/structure_sync":"^2.0.8",
+        "digitalutsc/advanced_search_tips": "^1.2",
+        "drupal/xmlsitemap": "^2.0",
+        "drupal/memcache":"^2.8",
+        "drupal/google_tag":"^2.0.9",
+        "drupal/recaptcha":"^3.5",
+        "drupal/recaptcha_v3": "^2.0.5",
+        "drupal/oembed_providers":"^3.0",
+        "drupal/textarea_limit":"^3.0.1",
+        "drupal/cer":"^5.0@beta",
+        "drupal/masquerade":"^2.2",
+        "drupal/media_revisions_ui":"^2.1",
+        "drupal/backup_migrate":"^5.1.5",
+        "islandora_lite/serve_iiif_file": "^1.0@beta",
+        "drupal/jsonld_markup": "^1.0@beta",
+        "drupal/metatag": "^2.2",
+        "drupal/redirect": "^1.13",
+        "drupal/file_extractor": "^5.0.1",
+        "drupal/term_merge": "^2.0",
+        "drupal/term_reference_change": "^2.0@beta",        
+        "drupal/getjwtonlogin":"^2.0",
+        "drupal/extlink":"^3.0",
+        "drupal/jquery_once":"^1.1",
+        "library/jquery-jsonview": "1.2.3",
+        "drupal/ultimate_cron": "^2.0@beta",
+        "islandora_lite/islandora_site_name": "^1.1",
+        "drupal/entity_reference_purger": "^1.0@beta",
+        "drupal/monolog": "^3.1",
+        "graylog2/gelf-php": "^2.0",
+        "drupal/anchor_link":"^3.0.6",
+        "drupal/contact_block": "^2.0.3",
+        "drupal/search_api_glossary": "^4.2",
+        "drupal/geofield":"^10.3.4",
+        "drupal/views_geojson":"^1.4",
+        "drupal/leaflet":"^10.4.12",
+        "drupal/group_concat": "^1.0",
+        "drupal/dblog_filter":"^4.1",
+        "drupal/form_mode_control": "^2.6",
+        "drupal/quickedit": "^2.0.1",
+        "drupal/color": "^2.0@alpha",
+        "drupal/translatable_menu_link_uri": "^2.1.3",
+        "drupal/views_arg_entity_field": "^3.0@beta",
+        "drupal/embed":"^1.10",
+        "drupal/url_embed":"^3.0",
+        "drupal/recogito_integration":"^2.0@alpha",
+        "drupal/views_url_path_arguments": "^1.7",
+        "islandora_lite/relation_extend": "^1.0",
+        "islandora_lite/advanced_search_default_sort_override": "^1.0",
+        "islandora_lite/xmlsitemap_extend": "^1.0",
+        "drupal/block_class": "^4.0.2",
+        "drupal/webform":"^6.3.1",
+        "digitalutsc/temporary_downloadable_media":"^1.0",
+        "digitalutsc/leafletjs": "^1.1",
+        "borisay/assign_calc": "^1.0",
+        "islandora_lite/rest_translation_util": "dev-main",
+        "drupal/webform_validation":"^2.0",
+        "drupal/language_switcher_popup":"^1.0",
+        "drupal/ds":"^3.37",
+        "digitalutsc/static_metadata_records":"^1.0",
+        "drupal/media_file_delete": "^1.3.2",
+        "drupal/views_entity_form_field":"^1.2",
+        "digitalutsc/selective_revisions":"dev-main",
+        "digitalutsc/media_file_relocate":"dev-main"
+    }
+}
