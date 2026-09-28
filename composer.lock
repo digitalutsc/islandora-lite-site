@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3167c5ba9ffc16f963f77e824809dbc",
+    "content-hash": "eb83a62a83525c9a8834ebda7dd9b882",
     "packages": [
         {
             "name": "adci/full-name-parser",

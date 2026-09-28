@@ -197,7 +197,7 @@ Nothing else in `core.extension.yml` was removed from core in D11 (checked: acti
 | drupal/views_flipped_table 3.0.0 | accessibility_views_flipped_table_convert_to_layout_table.patch | applies |
 | discoverygarden/islandora_hocr v1.4.3 | islandora_hocr_lite.patch | applies |
 | born-digital/islandora_iiif_hocr 2.0.7 | islandora_iiif_hocr_lite.patch | applies (unchanged version) |
-| mjordan/islandora_workbench_integration v1.2.1 | workbench_integration.patch | applies |
+| mjordan/islandora_workbench_integration v1.2.1 | workbench_integration.patch → **workbench_integration_d11.patch** | **re-rolled**: the old patch's context contains `version: "1.2.0"`, which only applied with fuzz (macOS `patch`); GNU patch 2.8 / `git apply` in the ISLE container reject it |
 
 `better_social_sharing_d11.patch` re-implements the "preferred URL field" feature for the 5.x code base:
 - `BetterSocialSharingButtonsHooks::preprocessBetterSocialSharingButtons()` overrides `items.page_url` with the configured link field's URL. Every partial template and the copy-link button (`data-page-url`) then use it, so the old template/JS changes are no longer needed.
@@ -206,7 +206,9 @@ Nothing else in `core.extension.yml` was removed from core in D11 (checked: acti
 
 The patch URL in `composer.json` follows the existing convention (`raw.githubusercontent.com/.../refs/heads/2.x/assets/patches/better_social_sharing_d11.patch`). **It only resolves after this branch is merged into `2.x`.** Until then, `composer install` from the committed `composer.json` fails on that patch. For local testing, point the entry at `assets/patches/better_social_sharing_d11.patch`.
 
-The old `better_social_sharing.patch` is still in `assets/patches/` for 2.x sites.
+Both re-rolled patches are currently referenced by **local path** (`assets/patches/..._d11.patch`) so the `drupal-11` branch installs on its own. Switch them to `raw.githubusercontent.com/.../2.x/...` URLs after merging to `2.x`, then run `composer update --lock`.
+
+The old `better_social_sharing.patch` and `workbench_integration.patch` stay in `assets/patches/` for 2.x sites.
 
 ## Upgrading an existing site
 
