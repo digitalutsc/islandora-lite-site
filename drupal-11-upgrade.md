@@ -155,6 +155,8 @@ These were intentionally left in place. **With `composer_site.json` merged in, `
 
 Verified: with only these four removed, `composer update -W` resolves with the overlay merged in.
 
+**Update (2026-09-28):** these four were then removed from the local `composer_site.json` to get a working D11 build. `composer update -W` with the overlay now succeeds, and every patch applies. Sites that have these modules enabled must uninstall them on Drupal 10 before upgrading, or wait for D11-compatible releases.
+
 **Installs, but Drupal will not enable it on D11.** The `core_version_requirement` in `.info.yml` excludes 11:
 
 | Package | File | core_version_requirement |

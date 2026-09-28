@@ -319,7 +319,7 @@
             "ableplayer_fixentitydisplayissue.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/ableplayer_fixentitydisplayissue.patch"
          },
          "drupal/better_social_sharing_buttons":{
-           "custom_link.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/better_social_sharing_d11.patch"
+           "custom_link.patch": "assets/patches/better_social_sharing_d11.patch"
          },
          "discoverygarden/islandora_hocr": {
             "islandora_hocr_lite_1.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_hocr_lite.patch"
