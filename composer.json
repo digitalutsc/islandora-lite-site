@@ -325,7 +325,7 @@
             "islandora_hocr_lite_1.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_hocr_lite.patch"
          },
          "born-digital/islandora_iiif_hocr": {
-            "islandora_iiif_hocr_lite.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_iiif_hocr_lite.patch"
+            "islandora_iiif_hocr_d11.patch": "assets/patches/islandora_iiif_hocr_d11.patch"
          },
          "drupal/islandora_mirador": {
             "islandora_mirador_lite.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_mirador_lite.patch"
