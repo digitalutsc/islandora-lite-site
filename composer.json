@@ -163,7 +163,7 @@
       "drupal/media_thumbnails_jp2": "^1.0",
       "drupal/media_thumbnails_pdf": "^2.0",
       "drupal/media_thumbnails_tiff": "^1.0",
-      "drupal/media_thumbnails_video": "^2.0",
+      "drupal/media_thumbnails_video": "2.0.2",
       "drupal/migrate_plus": "^6.0",
       "drupal/migrate_source_csv": "^3.8",
       "drupal/openseadragon": "^3.0",
@@ -329,6 +329,9 @@
          },
          "drupal/islandora_mirador": {
             "islandora_mirador_lite.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_mirador_lite.patch"
+         },
+         "drupal/media_thumbnails_video": {
+            "media_thumbnails_video_d11.patch": "assets/patches/media_thumbnails_video_d11.patch"
          },
          "drupal/media_thumbnails": {
             "media_thumbnail.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/media_thumbnails_march_17_2025.patch"

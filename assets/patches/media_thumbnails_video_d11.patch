@@ -1,0 +1,87 @@
+Drupal 11.4 compatibility for drupal/media_thumbnails_video 2.0.2.
+
+Drupal 11.4 core added a native `: array` return type to
+FileVideoFormatter::viewElements() and three required constructor parameters
+($currentUser, $imageStyleStorage, $entityFieldManager). 2.0.2's
+VideoExtendedFormatter overrides both, so on 11.4 PHP fails with
+"Declaration of ...VideoExtendedFormatter::viewElements(...) must be compatible
+with ...FileVideoFormatter::viewElements(...): array".
+
+This is upstream's fix from the 2.1.x branch (commits 08a1c8d "Making
+VideoExtendedFormatter.php drupal 11.4 compatible" and 8df07a1 "Fix
+__construct() in VideoExtendedFormatter to match parent core class"), which has
+no tagged release yet. core_version_requirement becomes ^11.4 because the fixed
+constructor only works on 11.4+.
+
+Drop this patch and the 2.0.2 pin once upstream tags a 2.1.x release; require
+that instead.
+
+diff --git a/media_thumbnails_video.info.yml b/media_thumbnails_video.info.yml
+index 29f90db..5635931 100644
+--- a/media_thumbnails_video.info.yml
++++ b/media_thumbnails_video.info.yml
+@@ -2,7 +2,7 @@ name: Media Thumbnails Video
+ type: module
+ description: This module uses the Media Thumbnails framework to create media entity thumbnails for video files.
+ package: Media
+-core_version_requirement: ^9.3 || ^10 || ^11
++core_version_requirement: ^11.4
+ configure: media_thumbnails_video.media_thumbnails_video_settings
+ dependencies:
+   - media_thumbnails:media_thumbnails
+diff --git a/src/Plugin/Field/FieldFormatter/VideoExtendedFormatter.php b/src/Plugin/Field/FieldFormatter/VideoExtendedFormatter.php
+index 079971f..1e2cbb4 100644
+--- a/src/Plugin/Field/FieldFormatter/VideoExtendedFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/VideoExtendedFormatter.php
+@@ -3,9 +3,12 @@
+ namespace Drupal\media_thumbnails_video\Plugin\Field\FieldFormatter;
+ 
+ use Drupal\Core\Entity\EntityInterface;
++use Drupal\Core\Entity\EntityFieldManagerInterface;
++use Drupal\Core\Entity\EntityStorageInterface;
+ use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemListInterface;
+ use Drupal\Core\File\FileUrlGeneratorInterface;
++use Drupal\Core\Session\AccountInterface;
+ use Drupal\file\Plugin\Field\FieldFormatter\FileVideoFormatter;
+ use Drupal\media\MediaInterface;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+@@ -34,8 +37,8 @@ class VideoExtendedFormatter extends FileVideoFormatter {
+   /**
+    * {@inheritdoc}
+    */
+-  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings, FileUrlGeneratorInterface $fileUrlGenerator) {
+-    parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);
++  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings, AccountInterface $current_user, EntityStorageInterface $image_style_storage, EntityFieldManagerInterface $entity_field_manager, FileUrlGeneratorInterface $fileUrlGenerator) {
++    parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings, $current_user, $image_style_storage, $entity_field_manager);
+     $this->fileUrlGenerator = $fileUrlGenerator;
+   }
+ 
+@@ -43,13 +46,25 @@ class VideoExtendedFormatter extends FileVideoFormatter {
+    * {@inheritdoc}
+    */
+   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+-    return new static($plugin_id, $plugin_definition, $configuration['field_definition'], $configuration['settings'], $configuration['label'], $configuration['view_mode'], $configuration['third_party_settings'], $container->get('file_url_generator'));
++    return new static(
++      $plugin_id,
++      $plugin_definition,
++      $configuration['field_definition'],
++      $configuration['settings'],
++      $configuration['label'],
++      $configuration['view_mode'],
++      $configuration['third_party_settings'],
++      $container->get('current_user'),
++      $container->get('entity_type.manager')->getStorage('image_style'),
++      $container->get('entity_field.manager'),
++      $container->get('file_url_generator'),
++    );
+   }
+ 
+   /**
+    * {@inheritdoc}
+    */
+-  public function viewElements(FieldItemListInterface $items, $langcode) {
++  public function viewElements(FieldItemListInterface $items, $langcode): array {
+     $elements = parent::viewElements($items, $langcode);
+     foreach ($elements as $key => $element) {
+       $attributes = $this->prepareAttributes();

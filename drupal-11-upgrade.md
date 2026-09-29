@@ -54,6 +54,7 @@ A complete build (`composer.json` + `composer_site.json`) was checked against th
 | `patch-files` (`rest_oai_pmh` `mods.html.twig`) | replaced with the `islandora_lite_installation` `main` copy, as designed. **The local reference copy `assets/templates/mods.html.twig` has drifted from it:** the local copy maps `Family`→`family` and uses `loop.index0`; the installed remote copy has no `Family` mapping. Decide which is correct and update the other |
 | `settings.php` scaffold append | present: `config_sync_directory = ../config/sync`, `file_private_path = sites/default/private` |
 | `core_version_requirement` of all 161 contrib modules and themes in `web/` | only `islandora_iiif_hocr` (`^9 \|\| ^10`) excluded Drupal 11; after `islandora_iiif_hocr_d11.patch` none do |
+| Loading every contrib class on the isle-dc Drupal 11.4 / PHP 8.4 runtime (4,248 classes, each in its own process) | one incompatible declaration: `media_thumbnails_video` `VideoExtendedFormatter::viewElements()`, fixed by `media_thumbnails_video_d11.patch` (see Blockers). No other fatal errors. 49 PHP 8.4 "implicitly nullable parameter" deprecations, not fatal until PHP 9: structure_sync (most), controlled_access_terms, views_timelinejs, context_ui, google_analytics, json_field_processor, color, search_api_glossary, and the `codementality/flysystem-stream-wrapper` library |
 | `composer audit --locked` | no security advisories |
 | Host `composer install` | fails on the host (PHP 8.5.8, no `ext-imagick`): `drupal/media_thumbnails_pdf` 2.0.1 requires `ext-imagick`. Build inside the container, or pass `--ignore-platform-req=ext-imagick` on the host |
 
@@ -215,6 +216,14 @@ Verified: with only these four removed, `composer update -W` resolves with the o
 - On the isle-dc Drupal 11.4 site, Drupal reports the module compatible, and `drush en islandora_iiif_hocr` enabled it with `islandora_iiif` and `termwithuri_condition`. Its views style plugin is discovered and no errors were logged. The optional `search_in_hocr` view was skipped because that site had no `default_solr_index_islandora_lite` index yet; a full config import creates both.
 - Not yet tested: an hOCR search through Mirador, which needs indexed hOCR content.
 
+**Resolved by a local patch (2026-09-29): media_thumbnails_video.** 2.0.2 declares `^9.3 || ^10 || ^11`, but fails on Drupal 11.4, which added a native `: array` return type to core's `FileVideoFormatter::viewElements()` and three required constructor parameters. Rebuilding the isle-dc site stopped with:
+
+```
+PHP Fatal error:  Declaration of Drupal\media_thumbnails_video\Plugin\Field\FieldFormatter\VideoExtendedFormatter::viewElements(...) must be compatible with Drupal\file\Plugin\Field\FieldFormatter\FileVideoFormatter::viewElements(...): array
+```
+
+Upstream fixed it only on the untagged `2.1.x` branch, which requires `>=11.4.0` (the `2.0.x` branch now requires `<11.4`). `assets/patches/media_thumbnails_video_d11.patch` applies that fix to 2.0.2: upstream commits `08a1c8d` (return type) and `8df07a1` (constructor and `create()` pass `current_user`, the image style storage and `entity_field.manager` to the parent), and sets `core_version_requirement: ^11.4`. `drupal/media_thumbnails_video` is pinned to `2.0.2` in `composer.json` so the patch keeps matching. Drop the patch and the pin once upstream tags a 2.1.x release. Verified on the isle-dc Drupal 11.4 site: `drush cr` completes, the class loads, and Drupal constructs the formatter with the new constructor. `ableplayer`'s formatters also extend core file formatters, but they extend `FileMediaFormatterBase`, whose constructor and `viewElements()` did not change, and they don't override the constructor.
+
 Clones of the `drupal-11` branch made before commit `83ce365` (2026-09-29) have the older `composer.json`, `composer_site.json` and `composer.lock`, which lock islandora_breadcrumbs 1.0.1, facets_year_range 1.0.1 and rest_translation_util dev-main. Those do not enable on Drupal 11; pull and run `composer install`.
 
 Resolved on 2026-09-29 by new releases: islandora_breadcrumbs 1.0.2, facets_year_range 1.0.4, group_concat 1.0.2, and rest_translation_util 1.1.1.
@@ -249,6 +258,7 @@ Nothing else in `core.extension.yml` was removed from core in D11 (checked: acti
 | drupal/islandora_mirador 3.0.1 | islandora_mirador_lite.patch | applies |
 | drupal/media_thumbnails 2.0.0 | media_thumbnails_march_17_2025.patch | applies (unchanged version) |
 | drupal/views_flipped_table 3.0.0 | accessibility_views_flipped_table_convert_to_layout_table.patch | applies |
+| drupal/media_thumbnails_video 2.0.2 | **media_thumbnails_video_d11.patch** | **new**: upstream 2.1.x fix for Drupal 11.4 (see Blockers) |
 | discoverygarden/islandora_hocr v1.4.3 | islandora_hocr_lite.patch | applies |
 | born-digital/islandora_iiif_hocr 2.0.7 | islandora_iiif_hocr_lite.patch → **islandora_iiif_hocr_d11.patch** | **merged**: one patch with the Lite changes plus `core_version_requirement: ^10 \|\| ^11` (see Blockers) |
 | mjordan/islandora_workbench_integration v1.2.1 | workbench_integration.patch → **workbench_integration_d11.patch** | **re-rolled**: the old patch's context contains `version: "1.2.0"`, which only applied with fuzz (macOS `patch`); GNU patch 2.8 / `git apply` in the ISLE container reject it |
@@ -258,7 +268,7 @@ Nothing else in `core.extension.yml` was removed from core in D11 (checked: acti
 - The settings form keeps the `use_url_field` → `preferred_url` setting.
 - `preferred_url` was added to the config schema.
 
-The three Drupal 11 patches are referenced by **local path** (`assets/patches/better_social_sharing_d11.patch`, `assets/patches/workbench_integration_d11.patch`, `assets/patches/islandora_iiif_hocr_d11.patch`), so the `drupal-11` branch installs on its own; the 2026-09-29 builds applied all three from those paths. The other nine patches keep the repo convention of `raw.githubusercontent.com/.../refs/heads/2.x/assets/patches/...` URLs. After this branch is merged into `2.x`, switch the three entries to that URL form and run `composer update --lock`. A `2.x` URL for any of them does not resolve before the merge.
+The four Drupal 11 patches are referenced by **local path** (`assets/patches/better_social_sharing_d11.patch`, `assets/patches/workbench_integration_d11.patch`, `assets/patches/islandora_iiif_hocr_d11.patch`, `assets/patches/media_thumbnails_video_d11.patch`), so the `drupal-11` branch installs on its own; the 2026-09-29 builds applied all four from those paths. The other nine patches keep the repo convention of `raw.githubusercontent.com/.../refs/heads/2.x/assets/patches/...` URLs. After this branch is merged into `2.x`, switch the four entries to that URL form and run `composer update --lock`. A `2.x` URL for any of them does not resolve before the merge.
 
 The old `better_social_sharing.patch`, `workbench_integration.patch` and `islandora_iiif_hocr_lite.patch` stay in `assets/patches/` for 2.x sites.
 
