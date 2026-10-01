@@ -124,6 +124,7 @@
       "cweagans/composer-patches": "^1.9@dev",
       "digitalutsc/group_solr": "^1.0",
       "digitalutsc/islandora_group": "^2.0",
+      "digitalutsc/media_fits": "^1.0",
       "digitalutsc/private_files_adapter": "^1.0",
       "discoverygarden/dgi_fixity": "^1.4.6",
       "discoverygarden/islandora_hocr": "v1.4.3",
@@ -152,6 +153,9 @@
       "drupal/fontawesome": "^3.0",
       "drupal/fullcalendar_solr": "^1.0",
       "drupal/geolocation": "^3.15",
+      "drupal/group": "3.3.5",
+      "drupal/hal": "^2.0",
+      "drupal/imagemagick": "^5.0",
       "drupal/islandora_mirador": "^3.0",
       "drupal/json_field": "^1.7",
       "drupal/json_field_processor": "1.0.x-dev@dev",
@@ -169,6 +173,7 @@
       "drupal/openseadragon": "^3.0",
       "drupal/pathauto": "^1.15",
       "drupal/pdf": "^1.3",
+      "drupal/rdf": "^3.0@beta",
       "drupal/replaywebpage": "^1.0",
       "drupal/rest_oai_pmh": "^2.3",
       "drupal/restui": "^1.22",
@@ -188,26 +193,22 @@
       "islandora/views_nested_details": "^1.1",
       "islandora_lite/ableplayer_extend": "^1.0",
       "islandora_lite/facets_year_range": "1.0.4",
-      "islandora_lite/islandora_breadcrumbs": "^1.0.2",
+      "islandora_lite/islandora_breadcrumbs": "^1.0",
+      "islandora_lite/islandora_iiif_hocr_extend": "^1.0",
       "islandora_lite/islandora_object_thumbnail": "^1.0",
       "islandora_lite/islandora_search_processor": "^1.0",
       "islandora_lite/islandora_site_name": "^1.1",
       "islandora_lite/termwithuri_condition": "^1.0",
+      "library/jsoneditor": "6.0.0",
       "library/masonry": "3.3.2",
       "library/pdf.js": "2.10.377",
       "library/timeline3": "3.8.18",
-      "library/jsoneditor": "6.0.0",
+      "mglaman/composer-drupal-lenient": "^2.0",
       "mjordan/islandora_workbench_integration": "1.2.1",
       "vlucas/phpdotenv": "^2.4",
-      "webflo/drupal-finder": "^1.3",        
+      "webflo/drupal-finder": "^1.3",
       "wikimedia/composer-merge-plugin": "^2.0",
-      "zaporylie/composer-drupal-optimizations": "^1.2",
-      "digitalutsc/media_fits": "^1.0",      
-      "drupal/imagemagick": "^5.0",
-      "islandora_lite/islandora_iiif_hocr_extend": "^1.0", 
-      "drupal/group" :"3.3.5",
-      "drupal/hal": "^2.0",
-      "drupal/rdf": "^3.0@beta"
+      "zaporylie/composer-drupal-optimizations": "^1.2"
    },
    "require-dev": {
       "phpunit/phpunit": "^11"
@@ -221,6 +222,13 @@
    "config": {
       "audit": {
          "ignore": {}
+      },
+      "policy": {
+         "advisories": {
+            "ignore-id": [
+               "PKSA-w9tt-7782-78jx"
+            ]
+         }
       },
       "discard-changes": true,
       "sort-packages": true,
@@ -236,7 +244,8 @@
          "wikimedia/composer-merge-plugin": true,
          "dealerdirect/phpcodesniffer-composer-installer": true,
          "php-http/discovery": true,
-         "symfony/runtime": true
+         "symfony/runtime": true,
+         "mglaman/composer-drupal-lenient": true
       }
    },
    "autoload": {
@@ -342,9 +351,21 @@
          "drupal/advanced_search": {
             "advanced_search_issue_96.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/advanced_search_issue_96.patch"
          },
+         "drupal/getjwtonlogin": {
+            "getjwtonlogin_d11.patch": "assets/patches/getjwtonlogin_d11.patch"
+         },
+         "drupal/media_revisions_ui": {
+            "media_revisions_ui_d11.patch": "assets/patches/media_revisions_ui_d11.patch"
+         },
          "drupal/controlled_access_terms": {
             "controlled_access_term_reversed_typerelation.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/controlled_access_term_reversed_typerelation.patch"
          }
+      },
+      "drupal-lenient": {
+         "allowed-list": [
+            "drupal/getjwtonlogin",
+            "drupal/media_revisions_ui"
+         ]
       },
       "merge-plugin": {
          "include": [

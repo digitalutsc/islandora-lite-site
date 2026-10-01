@@ -47,7 +47,7 @@ A complete build (`composer.json` + `composer_site.json`) was checked against th
 | Lock vs `composer.json` + overlay | in sync (no lock-hash warning) |
 | Versions in this report | all match the lock, including every "After" and "Locked" value below |
 | Change from the committed lock (`10a1608`) | 4 added (`digitalutsc/drupal_hero_banner` 1.0.3, `drupal/image_widget_crop` 3.0.0, `drupal/crop` 2.6.0, `drupal/imce` 3.1.5); 14 changed (facets_year_range 1.0.1→1.0.4, islandora_breadcrumbs 1.0.1→1.0.2, group_concat 1.0.1→1.0.2, rest_translation_util dev-main→1.1.1, and ten symfony/* components →v7.4.20); none removed |
-| Blockers removed | `drupal/getjwtonlogin`, `drupal/media_revisions_ui`, `digitalutsc/advanced_search_tips` are absent from the lock |
+| Blockers removed | `drupal/getjwtonlogin`, `drupal/media_revisions_ui`, `digitalutsc/advanced_search_tips` were absent from the lock at that point; all three were re-added later on 2026-09-29 (see Blockers) |
 | `composer.json` patches (cweagans) | 11 of 11 recorded as applied in each package's `PATCHES.txt`; 12 of 12 after `islandora_iiif_hocr_d11.patch` was added the same day |
 | `composer_site.json` patches (`applyDrupalPatches`) | none defined, so nothing to apply |
 | `rm -rf web/modules/contrib/islandora` | done; directory absent |
@@ -149,7 +149,7 @@ Only the constraint style changed for these; they were already on their latest D
 - hero_banner 1.0.3
 - facets_year_range 1.0.4
 
-hero_banner is back in `composer_site.json`, and it pulls in `drupal/image_widget_crop` 3.0.0, `drupal/crop` 2.6.0 and `drupal/imce` 3.1.5. advanced_search_tips has no new release and is still blocked.
+hero_banner is back in `composer_site.json`, and it pulls in `drupal/image_widget_crop` 3.0.0, `drupal/crop` 2.6.0 and `drupal/imce` 3.1.5. advanced_search_tips was still blocked at that point; 1.2.2 (released 2026-09-29) resolved it, see Blockers.
 
 "core req" is `core_version_requirement` from the module's `.info.yml`. "Blocks composer" means the package cannot be installed alongside Drupal 11 at all. In the "Locked" column, "(overlay)" marks packages required by `composer_site.json`; since the 2026-09-29 build they are in `composer.lock` too.
 
@@ -169,7 +169,7 @@ hero_banner is back in `composer_site.json`, and it pulls in `drupal/image_widge
 | islandora_lite/termwithuri_condition | [termwithuri_condition](https://github.com/digitalutsc/termwithuri_condition) | ^1.0 | 1.0.1 | 1.0.1 → `^9 \|\| ^10 \|\| ^11` | main → same | yes |
 | islandora_lite/islandora_iiif_hocr_extend | [islandora_iiif_hocr_extend](https://github.com/digitalutsc/islandora_iiif_hocr_extend) | ^1.0 | 1.0.5 | 1.0.5 → `^8 \|\| ^9 \|\| ^10 \|\| ^11` | main → same | yes |
 | digitalutsc/drupal_hero_banner | [hero_banner](https://github.com/digitalutsc/hero_banner) | ^1.0 | 1.0.3 (overlay) | 1.0.3 → `^8 \|\| ^9 \|\| ^10 \|\| ^11` | main → same | yes (since 1.0.3, which requires `image_widget_crop ^3` and `field_group ^4`; 1.0.2 and earlier block composer) |
-| digitalutsc/advanced_search_tips | [advanced_search_tips](https://github.com/digitalutsc/advanced_search_tips) | ^1.2 | not installed (removed) | 1.2.1 → `^8 \|\| ^9 \|\| ^10 \|\| ^11` | main → same | **no, blocks composer**: requires `drupal/fontawesome ^2`, and fontawesome 2.x is D10-only |
+| digitalutsc/advanced_search_tips | [advanced_search_tips](https://github.com/digitalutsc/advanced_search_tips) | ^1.2 | 1.2.2 (overlay) | 1.2.2 → `^8 \|\| ^9 \|\| ^10 \|\| ^11` | main → same | yes (since 1.2.2, which requires `drupal/fontawesome ^3.0`; 1.2.1 and earlier require `^2` and block composer) |
 | islandora_lite/serve_iiif_file | [serve_iiif_file](https://github.com/digitalutsc/serve_iiif_file) | ^1.0@beta | 1.0.0 (overlay) | 1.0.0 → `^8 \|\| ^9 \|\| ^10 \|\| ^11` | main → same | yes |
 | drupal/jsonld_markup | [jsonld_markup](https://github.com/digitalutsc/jsonld_markup) | ^1.0@beta | 1.0.0-beta4 (overlay) | 1.0.0-bata5 → `>=8` | main → same | yes (open-ended constraint). The latest tag is misspelled "bata5", which Composer cannot parse, so it resolves to 1.0.0-beta4 |
 | islandora_lite/relation_extend | [relation_extend](https://github.com/digitalutsc/relation_extend) | ^1.0 | 1.0.1 (overlay) | 1.0.1 → `^10 \|\| ^11` | main → same | yes |
@@ -195,16 +195,33 @@ These were intentionally left in place. **With `composer_site.json` merged in, `
 
 | Package | File | Reason |
 |---|---|---|
-| drupal/getjwtonlogin | composer_site.json | latest 2.0.3 requires `drupal/core ^8 \|\| ^9 \|\| ^10`; no D11 release or branch |
-| drupal/media_revisions_ui | composer_site.json | latest 2.1.0 requires `^9.3 \|\| ^10`; the dev-3.x branch is `^10.1` |
-| digitalutsc/advanced_search_tips (ours) | composer_site.json | requires `drupal/fontawesome ^2` |
+| ~~drupal/getjwtonlogin~~ | composer_site.json | **resolved 2026-09-29** with the lenient plugin and `getjwtonlogin_d11.patch` (see below); 2.0.3 requires `drupal/core ^8 \|\| ^9 \|\| ^10` and there is no D11 release or branch |
+| ~~drupal/media_revisions_ui~~ | composer_site.json | **resolved 2026-09-29** with the lenient plugin and `media_revisions_ui_d11.patch` (see below); 2.1.0 requires `^9.3 \|\| ^10`. **Obsolete: core has its own media revision UI since 10.2** |
+| ~~digitalutsc/advanced_search_tips (ours)~~ | composer_site.json | **resolved 2026-09-29**: 1.2.2 requires `drupal/fontawesome ^3.0` and supports D11, and it was re-added |
 | ~~digitalutsc/drupal_hero_banner (ours)~~ | composer_site.json | **resolved 2026-09-29**: 1.0.3 requires `image_widget_crop ^3` and supports D11, and it was re-added |
 
 Verified: with only these four removed, `composer update -W` resolves with the overlay merged in.
 
 **Update (2026-09-28):** these four were then removed from the local `composer_site.json` to get a working D11 build. `composer update -W` with the overlay now succeeds, and every patch applies. Sites that have these modules enabled must uninstall them on Drupal 10 before upgrading, or wait for D11-compatible releases.
 
-**Update (2026-09-29):** hero_banner 1.0.3 was re-added, and `composer update` still succeeds with the overlay. getjwtonlogin, media_revisions_ui and advanced_search_tips remain removed.
+**Update (2026-09-29):** hero_banner 1.0.3 was re-added, and `composer update` still succeeds with the overlay.
+
+**Update (2026-09-29, later): all three remaining composer blockers are resolved and re-added to `composer_site.json`.** The lock gained only these four packages; no other version changed.
+
+| Package | Constraint | How |
+|---|---|---|
+| digitalutsc/advanced_search_tips | ^1.2 → 1.2.2 | new release with D11 support; requires `fontawesome ^3.0` (already locked 3.0.0), `asset_injector ^2.21`, `context ^5@RC` (both already locked). From Packagist, no repository entry needed |
+| drupal/getjwtonlogin | 2.0.3 (pinned) | lenient plugin + `getjwtonlogin_d11.patch` |
+| drupal/media_revisions_ui | 2.1.0 (pinned) | lenient plugin + `media_revisions_ui_d11.patch` |
+| mglaman/composer-drupal-lenient | ^2.0 → 2.0.0 | new in `composer.json` |
+
+A patch alone cannot fix getjwtonlogin or media_revisions_ui: drupal.org's metadata for them says `drupal/core ^10` or older, so Composer refuses them before any patch runs. [`mglaman/composer-drupal-lenient`](https://github.com/mglaman/composer-drupal-lenient) (the approach drupal.org documents for this) relaxes the `drupal/core` requirement only for packages in `composer.json` → `extra.drupal-lenient.allowed-list`, which lists exactly these two. The patches then update the code and `core_version_requirement` so Drupal enables them. Both patch entries are in `composer.json`'s `extra.patches`, not `composer_site.json`: cweagans applies them on `composer install` and `composer update` and stops the build if one fails, whereas the overlay's `applyDrupalPatches` runs only on `update` and only prints failures. Entries for packages a site does not install are ignored.
+
+- **getjwtonlogin_d11.patch** is the Project Update Bot fix from [#3430753](https://www.drupal.org/project/getjwtonlogin/issues/3430753) (MR !4, RTBC): `core_version_requirement: ^10.1 || ^11`, and `MAIN_REQUEST` instead of the removed `MASTER_REQUEST` in the unit test. It also removes an unused import of `FilterResponseEvent`, a class Symfony 5 removed; the subscriber already type-hints `ResponseEvent`. Tested on the isle-dc Drupal 11.4 site: the module enables, and a JSON login (`POST /user/login?_format=json`) returns an `access_token` holding an RS256 JWT.
+- **media_revisions_ui_d11.patch** is the Project Update Bot change from [#3483658](https://www.drupal.org/project/media_revisions_ui/issues/3483658) (MR !7) plus two fixes `drupal-check` found: `renderPlain()` → `renderInIsolation()` (deprecated in 10.3, removed in 12) and an explicit nullable constructor parameter (PHP 8.4, issue [#3625648](https://www.drupal.org/project/media_revisions_ui/issues/3625648)). `core_version_requirement` is `^10.3 || ^11` because `renderInIsolation()` needs 10.3. Tested on the isle-dc site: the module enables with no errors logged.
+- **media_revisions_ui is obsolete and duplicates core.** Its maintainers closed the Drupal 11 issue as "won't fix" because core has shipped a media revision UI since 10.2. On Drupal 11.4 enabling it replaces core's `entity.media.version_history` page with the module's controller, adds revert and delete pages at `/media/{id}/revisions/{rev}/…` next to core's `/media/{id}/revision/{rev}/…`, and gives media items **two "Revisions" tabs**. Recommended: uninstall it on each site and use core's Revisions tab, then remove it from `composer_site.json`, the lenient allow-list and `extra.patches`.
+
+`advanced_search_tips` 1.2.2 was also enabled on the isle-dc site without errors. All three test modules were uninstalled afterwards, leaving that site's 144 enabled modules unchanged.
 
 **Resolved by a local patch (2026-09-29): islandora_iiif_hocr.** 2.0.7 declares `^9 \|\| ^10`, and there is no newer upstream release. `config/sync/core.extension.yml` enables it and `views.view.search_in_hocr.yml` depends on it, so a fresh Drupal 11 install from this config stopped with "module 'islandora_iiif_hocr' is incompatible with this version of Drupal core".
 
@@ -258,6 +275,8 @@ Nothing else in `core.extension.yml` was removed from core in D11 (checked: acti
 | drupal/islandora_mirador 3.0.1 | islandora_mirador_lite.patch | applies |
 | drupal/media_thumbnails 2.0.0 | media_thumbnails_march_17_2025.patch | applies (unchanged version) |
 | drupal/views_flipped_table 3.0.0 | accessibility_views_flipped_table_convert_to_layout_table.patch | applies |
+| drupal/getjwtonlogin 2.0.3 | **getjwtonlogin_d11.patch** | **new**: Project Update Bot fix plus unused-import removal (see Blockers); needs the lenient plugin |
+| drupal/media_revisions_ui 2.1.0 | **media_revisions_ui_d11.patch** | **new**: Project Update Bot fix plus two deprecation fixes (see Blockers); needs the lenient plugin |
 | drupal/media_thumbnails_video 2.0.2 | **media_thumbnails_video_d11.patch** | **new**: upstream 2.1.x fix for Drupal 11.4 (see Blockers) |
 | discoverygarden/islandora_hocr v1.4.3 | islandora_hocr_lite.patch | applies |
 | born-digital/islandora_iiif_hocr 2.0.7 | islandora_iiif_hocr_lite.patch → **islandora_iiif_hocr_d11.patch** | **merged**: one patch with the Lite changes plus `core_version_requirement: ^10 \|\| ^11` (see Blockers) |
@@ -268,14 +287,14 @@ Nothing else in `core.extension.yml` was removed from core in D11 (checked: acti
 - The settings form keeps the `use_url_field` → `preferred_url` setting.
 - `preferred_url` was added to the config schema.
 
-The four Drupal 11 patches are referenced by **local path** (`assets/patches/better_social_sharing_d11.patch`, `assets/patches/workbench_integration_d11.patch`, `assets/patches/islandora_iiif_hocr_d11.patch`, `assets/patches/media_thumbnails_video_d11.patch`), so the `drupal-11` branch installs on its own; the 2026-09-29 builds applied all four from those paths. The other nine patches keep the repo convention of `raw.githubusercontent.com/.../refs/heads/2.x/assets/patches/...` URLs. After this branch is merged into `2.x`, switch the four entries to that URL form and run `composer update --lock`. A `2.x` URL for any of them does not resolve before the merge.
+The six Drupal 11 patches are referenced by **local path** (`assets/patches/better_social_sharing_d11.patch`, `assets/patches/workbench_integration_d11.patch`, `assets/patches/islandora_iiif_hocr_d11.patch`, `assets/patches/media_thumbnails_video_d11.patch`, `assets/patches/getjwtonlogin_d11.patch`, `assets/patches/media_revisions_ui_d11.patch`), so the `drupal-11` branch installs on its own; the 2026-09-29 builds applied all six from those paths. The other nine patches keep the repo convention of `raw.githubusercontent.com/.../refs/heads/2.x/assets/patches/...` URLs. After this branch is merged into `2.x`, switch the six entries to that URL form and run `composer update --lock`. A `2.x` URL for any of them does not resolve before the merge.
 
 The old `better_social_sharing.patch`, `workbench_integration.patch` and `islandora_iiif_hocr_lite.patch` stay in `assets/patches/` for 2.x sites.
 
 ## Upgrading an existing site
 
 1. PHP 8.3+ in the container, and `ext-imagick` (media_thumbnails_pdf requires it). Run Composer inside that container; a host PHP without `ext-imagick` refuses to install the lock unless you pass `--ignore-platform-req=ext-imagick`.
-2. Resolve or remove the three remaining composer blockers in `composer_site.json`: getjwtonlogin, media_revisions_ui, and advanced_search_tips.
+2. No composer blockers remain. getjwtonlogin and media_revisions_ui install through the lenient plugin and their patches. On sites that use media_revisions_ui, consider uninstalling it (on Drupal 10.2+, before or after the upgrade) and using core's media Revisions tab instead.
 3. islandora_iiif_hocr no longer needs uninstalling: `islandora_iiif_hocr_d11.patch` makes it enable on D11. Our own modules (islandora_breadcrumbs, group_concat, rest_translation_util, hero_banner, facets_year_range) now have D11 releases, and `composer update` picks them up.
 4. `composer update -W`
 5. `drush updb -y && drush cr`

@@ -1,0 +1,69 @@
+Drupal 11 compatibility for drupal/media_revisions_ui 2.1.0.
+
+media_revisions_ui has no Drupal 11 release; 2.1.0 declares ^9.3 || ^10. This is
+the Project Update Bot's change from https://www.drupal.org/project/media_revisions_ui/issues/3483658
+(merge request !7), which adds ^11 to core_version_requirement and to the
+package's composer.json drupal/core requirement. Here both become ^10.3 || ^11,
+because renderInIsolation() below needs Drupal 10.3+. Plus two fixes in MediaRevisionController
+found by drupal-check on Drupal 11.4:
+- renderPlain() -> renderInIsolation() (renderPlain is deprecated since 10.3 and
+  removed in 12);
+- explicit nullable type for the $entity_repository constructor parameter
+  (PHP 8.4 deprecation, drupal.org issue #3625648).
+
+NOTE: the maintainers closed that issue as "won't fix" because the module is
+obsolete: Drupal core has provided a media revision UI since 10.2 (core issue
+#2911977). Prefer uninstalling this module and using core's Revisions tab.
+
+Composer refuses the package on Drupal 11 because drupal.org's metadata says
+drupal/core ^9.3 || ^10. composer.json lists it in
+extra.drupal-lenient.allowed-list (mglaman/composer-drupal-lenient) so it can be
+installed; this patch then makes Drupal enable it.
+
+diff --git a/composer.json b/composer.json
+index ed1731e..3235474 100644
+--- a/composer.json
++++ b/composer.json
+@@ -11,6 +11,6 @@
+         "source": "https://git.drupalcode.org/project/media_revisions_ui"
+     },
+     "require": {
+-        "drupal/core": "^9.3 || ^10"
++        "drupal/core": "^10.3 || ^11"
+     }
+ }
+diff --git a/media_revisions_ui.info.yml b/media_revisions_ui.info.yml
+index 28ab91c..d753173 100644
+--- a/media_revisions_ui.info.yml
++++ b/media_revisions_ui.info.yml
+@@ -1,7 +1,7 @@
+ name: 'Media Revisions UI'
+ type: module
+ description: 'Adds revisions interface for Media entity'
+-core_version_requirement: ^9.3 || ^10
++core_version_requirement: ^10.3 || ^11
+ package: 'Media'
+ dependencies:
+   - drupal:media
+diff --git a/src/Controller/MediaRevisionController.php b/src/Controller/MediaRevisionController.php
+index 7681304..cc4f3ef 100644
+--- a/src/Controller/MediaRevisionController.php
++++ b/src/Controller/MediaRevisionController.php
+@@ -50,7 +50,7 @@ class MediaRevisionController extends ControllerBase {
+    * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+    *   The entity repository.
+    */
+-  public function __construct(DateFormatterInterface $date_formatter, RendererInterface $renderer, EntityRepositoryInterface $entity_repository = NULL) {
++  public function __construct(DateFormatterInterface $date_formatter, RendererInterface $renderer, ?EntityRepositoryInterface $entity_repository = NULL) {
+     $this->dateFormatter = $date_formatter;
+     $this->renderer = $renderer;
+     $this->entityRepository = $entity_repository;
+@@ -146,7 +146,7 @@ class MediaRevisionController extends ControllerBase {
+             '#template' => '{% trans %}{{ date }} by {{ username }}{% endtrans %}{% if message %}<p class="revision-log">{{ message }}</p>{% endif %}',
+             '#context' => [
+               'date' => $link,
+-              'username' => $this->renderer->renderPlain($username),
++              'username' => $this->renderer->renderInIsolation($username),
+               'message' => [
+                 '#markup' => $revision->getRevisionLogMessage(),
+                 '#allowed_tags' => Xss::getHtmlTagList(),
