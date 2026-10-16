@@ -149,7 +149,6 @@
       "drupal/field_group": "^4.0",
       "drupal/field_permissions": "^1.5",
       "drupal/filemime": "^2.0",
-      "drupal/filter_perms": "^2.0",
       "drupal/fontawesome": "^3.0",
       "drupal/fullcalendar_solr": "^1.0",
       "drupal/geolocation": "^3.15",
