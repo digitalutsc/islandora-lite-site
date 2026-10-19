@@ -1,0 +1,39 @@
+Fix drupal/groupmedia 4.0.8 (and 4.0.7): help page fatal error and a missing import.
+
+The Group 2 -> 3 rename ("content" -> "relationships") was applied by
+find-and-replace and also changed two things it should not have:
+- groupmedia_help() calls file_get_relationships(), which does not exist, so
+  /admin/help/groupmedia throws "Call to undefined function". Use
+  file_get_contents() again.
+- MediaReference uses GroupRelationshipInterface without importing it, so the
+  name resolves to Drupal\groupmedia\Plugin\MediaFinder\GroupRelationshipInterface;
+  `instanceof` against that missing class is always FALSE and the "skip the
+  media we just added to the group" check never matches. Import the Group class.
+
+Both are still present in 4.0.8 and on 4.0.x; no drupal.org issue yet.
+
+diff --git a/groupmedia.module b/groupmedia.module
+index c77d3d3..62186d5 100644
+--- a/groupmedia.module
++++ b/groupmedia.module
+@@ -77,7 +77,7 @@ function groupmedia_form_media_form_alter(&$form, FormStateInterface $form_state
+ function groupmedia_help($route_name, RouteMatchInterface $route_match) {
+   switch ($route_name) {
+     case 'help.page.groupmedia':
+-      $text = file_get_relationships(__DIR__ . '/README.md');
++      $text = file_get_contents(__DIR__ . '/README.md');
+       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+         return '<pre>' . Html::escape($text) . '</pre>';
+       }
+diff --git a/src/Plugin/MediaFinder/MediaReference.php b/src/Plugin/MediaFinder/MediaReference.php
+index a634585..d455184 100644
+--- a/src/Plugin/MediaFinder/MediaReference.php
++++ b/src/Plugin/MediaFinder/MediaReference.php
+@@ -5,6 +5,7 @@ namespace Drupal\groupmedia\Plugin\MediaFinder;
+ use Drupal\Core\Entity\ContentEntityInterface;
+ use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
++use Drupal\group\Entity\GroupRelationshipInterface;
+ use Drupal\groupmedia\Plugin\Attribute\MediaFinder;
+ 
+ /**
