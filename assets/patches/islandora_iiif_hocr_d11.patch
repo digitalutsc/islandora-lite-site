@@ -151,7 +151,7 @@ index e254c37..0bc69df 100644
            empty: true
            content: 'Displaying results @start - @end of @total'
 -      footer:
-+      footer: null
++      footer: {  }
        display_extenders: {  }
      cache_metadata:
        max-age: -1

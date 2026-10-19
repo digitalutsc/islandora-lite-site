@@ -345,7 +345,7 @@ display:
           plugin_id: result
           empty: true
           content: 'Displaying results @start - @end of @total'
-      footer: null
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
