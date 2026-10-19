@@ -125,7 +125,7 @@
         "drupal/views_geojson":"^1.4",
         "drupal/leaflet":"^10.4",
         "drupal/group_concat": "^1.0",
-        "drupal/dblog_filter":"^4.1",
+        "drupal/dblog_filter":"4.1.0",
         "drupal/form_mode_control": "^2.6",
         "drupal/quickedit": "^2.0",
         "drupal/color": "^2.0@alpha",

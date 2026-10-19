@@ -1,0 +1,40 @@
+Drupal 11 compatibility for drupal/dblog_filter 8.x-4.1.
+
+Since Drupal 10.2, ConfigFormBase::__construct() requires the typed config
+manager as its second argument; 4.1 passes only the config factory, so
+/admin/reports/dblog-filter throws ArgumentCountError. 8.x-4.1 is the latest
+release and 8.x-4.x has no fix. This is the change from
+https://www.drupal.org/project/dblog_filter/issues/3522073
+(merge request !13, status RTBC): inject config.typed and pass it to the parent.
+
+diff --git a/src/Form/DBLogFilterSettingsForm.php b/src/Form/DBLogFilterSettingsForm.php
+index 479f4fe8d386acdaf58fc6f69612c06fa3f0bb5d..432a6aff9a8dc0507093dd68161f43290590cb7e 100644
+--- a/src/Form/DBLogFilterSettingsForm.php
++++ b/src/Form/DBLogFilterSettingsForm.php
+@@ -4,6 +4,7 @@ namespace Drupal\dblog_filter\Form;
+ 
+ use Drupal\Core\Config\Config;
+ use Drupal\Core\Config\ConfigFactoryInterface;
++use Drupal\Core\Config\TypedConfigManagerInterface;
+ use Drupal\Core\Extension\ModuleHandlerInterface;
+ use Drupal\Core\Form\ConfigFormBase;
+ use Drupal\Core\Form\FormStateInterface;
+@@ -25,8 +26,8 @@ final class DBLogFilterSettingsForm extends ConfigFormBase {
+   /**
+    * {@inheritdoc}
+    */
+-  public function __construct(ConfigFactoryInterface $config_factory, ModuleHandlerInterface $moduleHandler) {
+-    parent::__construct($config_factory);
++  public function __construct(ConfigFactoryInterface $config_factory, TypedConfigManagerInterface $typed_config_manager, ModuleHandlerInterface $moduleHandler) {
++    parent::__construct($config_factory, $typed_config_manager);
+     $this->moduleHandler = $moduleHandler;
+   }
+ 
+@@ -36,6 +37,7 @@ final class DBLogFilterSettingsForm extends ConfigFormBase {
+   public static function create(ContainerInterface $container) {
+     return new static(
+       $container->get('config.factory'),
++      $container->get('config.typed'),
+       $container->get('module_handler'),
+     );
+   }

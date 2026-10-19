@@ -356,6 +356,9 @@
          "drupal/media_revisions_ui": {
             "media_revisions_ui_d11.patch": "assets/patches/media_revisions_ui_d11.patch"
          },
+         "drupal/dblog_filter": {
+            "dblog_filter_d11.patch": "assets/patches/dblog_filter_d11.patch"
+         },
          "drupal/controlled_access_terms": {
             "controlled_access_term_reversed_typerelation.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/controlled_access_term_reversed_typerelation.patch"
          }
