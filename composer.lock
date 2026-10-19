@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d07ac7a2b39a4110b6376ae2dbacf3e",
+    "content-hash": "dc537db8669c021df71b792b206906db",
     "packages": [
         {
             "name": "adci/full-name-parser",
@@ -9725,6 +9725,15 @@
                 }
             ],
             "time": "2026-07-09T11:49:27+00:00"
+        },
+        {
+            "name": "library/bootstrap",
+            "version": "5.3.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/twbs/bootstrap/archive/refs/tags/v5.3.8.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "library/jsoneditor",
