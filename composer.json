@@ -155,7 +155,7 @@
       "drupal/controlled_access_terms": "^2.6",
       "drupal/core-composer-scaffold": "^11.4",
       "drupal/core-recommended": "^11.4",
-      "drupal/csvfile_formatter": "^1.0",
+      "drupal/csvfile_formatter": "1.0.26",
       "drupal/devel": "^5.5",
       "drupal/facets": "^2.0",
       "drupal/field_group": "^4.0",
@@ -343,7 +343,8 @@
            "custom_link.patch": "assets/patches/better_social_sharing_d11.patch"
          },
          "discoverygarden/islandora_hocr": {
-            "islandora_hocr_lite_1.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_hocr_lite.patch"
+            "islandora_hocr_lite_1.patch": "https://raw.githubusercontent.com/digitalutsc/islandora-lite-site/refs/heads/2.x/assets/patches/islandora_hocr_lite.patch",
+            "islandora_hocr_solr_configs.patch": "assets/patches/islandora_hocr_solr_configs.patch"
          },
          "born-digital/islandora_iiif_hocr": {
             "islandora_iiif_hocr_d11.patch": "assets/patches/islandora_iiif_hocr_d11.patch"
@@ -374,6 +375,9 @@
          },
          "drupal/groupmedia": {
             "groupmedia_help_readme.patch": "assets/patches/groupmedia_help_readme.patch"
+         },
+         "drupal/csvfile_formatter": {
+            "csvfile_formatter_settings_form.patch": "assets/patches/csvfile_formatter_settings_form.patch"
          },
          "drupal/controlled_access_terms": {
             "controlled_access_term_reversed_typerelation.patch": "https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/refs/heads/main/all/patches/controlled_access_term_reversed_typerelation.patch"

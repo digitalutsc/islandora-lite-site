@@ -1,0 +1,24 @@
+Fix discoverygarden/islandora_hocr v1.4.3: shipped Solr field type has solr_configs: null.
+
+config/install/search_api_solr.solr_field_type.islandora_hocr_und_7_0_0.yml sets
+`solr_configs: null`, but search_api_solr's schema types it as a mapping
+(search_api_solr.solr_configs) and its own field types use `{}` or a mapping.
+With NULL, SolrFieldType::getFieldTypeAsJson() and SolrFieldTypeForm::form()
+log "Trying to access array offset on null" / "foreach() argument must be of
+type array|object, null given", and config-set generation iterates the same
+value. Ship an empty mapping instead. Still present on upstream main.
+
+Only affects sites that install the module without existing config; sites that
+already have the field type need their active config (and config/sync) fixed.
+
+diff --git a/config/install/search_api_solr.solr_field_type.islandora_hocr_und_7_0_0.yml b/config/install/search_api_solr.solr_field_type.islandora_hocr_und_7_0_0.yml
+index 7d54d40..2aacda0 100644
+--- a/config/install/search_api_solr.solr_field_type.islandora_hocr_und_7_0_0.yml
++++ b/config/install/search_api_solr.solr_field_type.islandora_hocr_und_7_0_0.yml
+@@ -89,5 +89,5 @@ field_type:
+ unstemmed_field_type: null
+ spellcheck_field_type: null
+ collated_field_type: null
+-solr_configs: null
++solr_configs: {  }
+ text_files: {  }

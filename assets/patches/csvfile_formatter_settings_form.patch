@@ -1,0 +1,23 @@
+Fix drupal/csvfile_formatter 1.0.26: DataTables settings form warns on sites without the local-library key.
+
+1.0.2x added dataTableSettings.dataTableLibrarySourceLocal ("Allow local
+DataTables library", drupal.org #3520780) without an update hook, so sites that
+installed the module earlier do not have it in csvfile_formatter.settings.
+DataTablesSettingsForm::buildForm() reads it unchecked and logs
+"Undefined array key "dataTableLibrarySourceLocal"". Default it to FALSE (CDN),
+the same fallback CSVFileFormatter::viewElements() already uses. Still present
+on 1.0.x; no drupal.org issue yet.
+
+diff --git a/src/Form/DataTablesSettingsForm.php b/src/Form/DataTablesSettingsForm.php
+index 67774d3..58dd650 100644
+--- a/src/Form/DataTablesSettingsForm.php
++++ b/src/Form/DataTablesSettingsForm.php
+@@ -63,7 +63,7 @@ class DataTablesSettingsForm extends ConfigFormBase {
+         $this->t('Load from CDN'),
+         $this->t('Load from local files'),
+       ],
+-      '#default_value' => (int) (bool) $settings['dataTableLibrarySourceLocal'],
++      '#default_value' => (int) (bool) ($settings['dataTableLibrarySourceLocal'] ?? FALSE),
+     ];
+     $form['dataTable']['autoWidth'] = [
+       '#type' => 'checkbox',

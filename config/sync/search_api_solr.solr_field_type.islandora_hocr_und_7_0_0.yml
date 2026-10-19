@@ -90,5 +90,5 @@ field_type:
 unstemmed_field_type: null
 spellcheck_field_type: null
 collated_field_type: null
-solr_configs: null
+solr_configs: {  }
 text_files: {  }
