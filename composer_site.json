@@ -153,6 +153,7 @@
         "drupal/views_entity_form_field":"^1.2",
         "digitalutsc/selective_revisions":"dev-main",
         "digitalutsc/media_file_relocate":"dev-main",
-        "digitalutsc/drupal_hero_banner": "^1.0"
+        "digitalutsc/drupal_hero_banner": "^1.0",
+        "drupal/auditfiles":"^4.2"
     }
 }
